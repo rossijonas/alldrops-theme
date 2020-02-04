@@ -1,6 +1,6 @@
 ![](https://raw.githubusercontent.com/cntrump/hugo-notepadium/master/images/screenshot.png)
 
-# hugo-notepadium ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/2f389751-e070-437b-9dbd-3773bd57322e/deploy-status)](https://lvv.me)
+# hugo-notepadium ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/a3864d2b-cfe5-4e98-bf13-b05d66ae77d5/deploy-status)](https://alldrops.info)
 
 Request Hugo Version: [0.60.0+](https://github.com/gohugoio/hugo/releases/)
 
