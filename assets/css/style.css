@@ -16,7 +16,7 @@ html {
 body {
   display: block;
   color: rgba(0,0,0,.85);
-  background-color: #f2f2f6;
+  background-color: white; /* changed */
 
   word-break: normal;
   word-wrap: break-word;
@@ -272,6 +272,7 @@ acronym {
   padding: 4px 6px;
   margin: 5px 5px 5px 0;
   border-radius: 20px;
+  color: black; /* added */
 }
 
 .footer {
@@ -399,7 +400,7 @@ acronym {
 }
 
 .tag {
-  color: #c41a16;
+  color: grey; /* changed */
   background-color: #f2f2f6;
 }
 
@@ -718,4 +719,9 @@ acronym {
 
 .article.markdown-body .lntable tr>:first-child {
   border-right: 1px dashed #e6e6e6;
+}
+
+/* added */
+a:link {
+  color: black;
 }
