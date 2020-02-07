@@ -6,6 +6,9 @@
 <ul class="note list">
     {{- range $paginator.Pages -}}
     <li class="item"><a class="note" href="{{- .RelPermalink -}}">
+            {{- if .Params.image -}}
+            <img src="{{.Params.image}}" alt="post cover">
+            {{- end -}}
             <p class="note title">{{- .Title | safeHTML -}}</p>
             {{- if .Date -}}
                 <p class="note date">{{- .Date.Format $dateFormat -}}</p>
