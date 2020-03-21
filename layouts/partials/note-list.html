@@ -4,33 +4,38 @@
 {{- $dateFormat := site.Params.dateFormat -}}
 {{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
 <ul class="note list">
-    {{- range $paginator.Pages -}}
-    <li class="item"><a class="note" href="{{- .RelPermalink -}}">
-            {{- if .Params.image -}}
-            <img src="{{.Params.image}}" alt="post cover">
-            {{- end -}}
-            <p class="note title">{{- .Title | safeHTML -}}</p>
-            {{- if .Date -}}
-                <p class="note date">{{- .Date.Format $dateFormat -}}</p>
-            {{- end -}}
-            {{- if .Summary -}}<p class="note content">{{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}<span class="mldr">&mldr;{{- T "more" -}}</span>{{- end -}}</p>{{- end -}}
-            {{- $relURL := .RelPermalink -}}
-            {{- $imgs := .Params.imgs -}}
-            {{- with .Params.imgs -}}
-                <span class="note imgs">
-                    {{- $imgCount := len $imgs -}}
-                    {{- range $imgs -}}
-                    {{- $imgurl := lower . -}}
-                    {{- if and (not (hasPrefix $imgurl "http://")) (not (hasPrefix $imgurl "https://")) -}}
-                    {{- $imgurl = path.Join $relURL . -}}
-                    {{- end -}}
-                    <img class="img" src="{{- $imgurl -}}" alt />
-                    {{- end -}}
-                </span>
-            {{- end -}}
-        </a>
-        {{- partial "note-labels.html" . -}}
-    </li>
-    {{- end -}}
+  {{- range $paginator.Pages -}}
+  <li class="item note-item-container"><a class="note" href="{{- .RelPermalink -}}">{{- if .Params.image -}}
+      <div class="note-item-post-cover">
+        <img src="{{.Params.image}}" alt="post cover">{{- end -}}
+      </div>
+      <div class="note-item-content">
+        <p class="note title">{{- .Title | safeHTML -}}</p>
+        {{- if .Date -}}
+        <p class="note date">{{- .Date.Format $dateFormat -}}</p>
+        {{- end -}}
+        {{- if .Summary -}}
+        <p class="note content">
+          {{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}
+          <span class="mldr">&mldr;{{- T "more" -}}</span>
+          {{- end -}}
+        </p>
+      </div>
+      {{- end -}}
+      {{- $relURL := .RelPermalink -}}
+      {{- $imgs := .Params.imgs -}}
+      {{- with .Params.imgs -}}
+      <span class="note imgs">{{- $imgCount := len $imgs -}}
+        {{- range $imgs -}}
+        {{- $imgurl := lower . -}}
+        {{- if and (not (hasPrefix $imgurl "http://")) (not (hasPrefix $imgurl "https://")) -}}
+        {{- $imgurl = path.Join $relURL . -}}
+        {{- end -}}
+        <img class="img" src="{{- $imgurl -}}" alt />
+        {{- end -}}
+      </span>{{- end -}}
+    </a>{{- partial "note-labels.html" . -}}
+  </li>
+  {{- end -}}
 </ul>
 {{- end -}}

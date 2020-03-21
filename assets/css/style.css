@@ -490,6 +490,21 @@ acronym {
   border-radius: 6px;
 }
 
+/* List Page fix 1 - Post image on the left */ 
+.note-item-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note-item-post-cover {
+  flex: 1 1 auto;
+}
+
+.note-item-content {
+  flex: 3 1 auto;
+}
+/* List Page fix 1 - end */ 
+
 @media (max-width: 500px) {
   .note.list .item,
   .article.markdown-body {
