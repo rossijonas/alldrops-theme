@@ -5,9 +5,9 @@
 
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'Segoe UI', 
-                Ubuntu, Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans',
-                'Helvetica Neue', Helvetica, Arial, Verdana, 'Lucida Grande', 
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  Ubuntu, Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans',
+  'Helvetica Neue', Helvetica, Arial, Verdana, 'Lucida Grande', 
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   font-size: 17px;
   font-weight: 400;
   line-height: 1.7;
@@ -16,11 +16,11 @@ html {
 body {
   display: block;
   color: rgba(0,0,0,.85);
-  background-color: white; /* changed */
+  background-color: #f2f2f6;
 
   word-break: normal;
   word-wrap: break-word;
-  
+
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -400,7 +400,7 @@ acronym {
 }
 
 .tag {
-  color: grey; /* changed */
+  color: #c41a16;
   background-color: #f2f2f6;
 }
 
@@ -490,21 +490,6 @@ acronym {
   border-radius: 6px;
 }
 
-/* List Page fix 1 - Post image on the left */ 
-.note-item-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.note-item-post-cover {
-  flex: 1 1 auto;
-}
-
-.note-item-content {
-  flex: 3 1 auto;
-}
-/* List Page fix 1 - end */ 
-
 @media (max-width: 500px) {
   .note.list .item,
   .article.markdown-body {
@@ -524,7 +509,7 @@ acronym {
 
 .article.markdown-body {
   display: block;
-  
+
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -736,7 +721,42 @@ acronym {
   border-right: 1px dashed #e6e6e6;
 }
 
-/* added */
+/* alldrops.info - custom */
+
+/* General layout */
+
+body {
+  background-color: white;
+}
+
 a:link {
   color: black;
 }
+
+.tag {
+  color: yellow;
+}
+
+/* List Page - Post image on the left */ 
+a.note-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+div.note-item-post-cover {
+  flex: 5 1 0;
+}
+
+div.note-item-content {
+  flex: 7 1 0;
+  padding: 0 0 0 10px;
+}
+
+
+@media (max-width: 800px) {
+  a.note-item-container {
+    display: block;
+  }
+}
+
