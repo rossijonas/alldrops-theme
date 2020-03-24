@@ -9,6 +9,7 @@ homepage = "https://lvv.me/"
 tags = ["blog"]
 features = ["MathJax", "HighlightJS", "PrismJS"]
 min_version = "0.60.0"
+dateFormat = "Jan 2, 2006"
 
 [author]
   name = "lvv"
