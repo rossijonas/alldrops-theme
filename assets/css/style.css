@@ -733,15 +733,37 @@ a:link {
   color: black;
 }
 
-.tag {
-  color: yellow;
+a.tag,
+a.category {
+  color: black;
+  border: none;
+  text-decoration: initial:
+}
+
+a.tag {
+  background-color: white;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+a.category {
+  font-weight: bold;
+  background-color: white;
+}
+
+p.note.subtitle {
+  font-weight: bold;
+  color: rgba(0,0,0,.54);
+}
+
+.note.title {
+  font-size: 21px;
 }
 
 /* List Page - Post image on the left */ 
 a.note-item-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 div.note-item-post-cover {

@@ -2,25 +2,37 @@
 
 {{- if gt $paginator.TotalPages 0 -}}
 {{- $dateFormat := site.Params.dateFormat -}}
-{{- if not $dateFormat -}}{{- $dateFormat = "2006-01-02" -}}{{- end -}}
+{{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
 <ul class="note list">
   {{- range $paginator.Pages -}}
   <li class="item">
-    <a class="note note-item-container" href="{{- .RelPermalink -}}">{{- if .Params.image -}}
+    <a class="note note-item-container" href="{{- .RelPermalink -}}">
+      {{- if .Params.image -}}
       <div class="note-item-post-cover">
         <img src="{{.Params.image}}" alt="post cover">{{- end -}}
       </div>
       <div class="note-item-content">
         <p class="note title">{{- .Title | safeHTML -}}</p>
-        {{- if .Date -}}
-        <p class="note date">{{- .Date.Format $dateFormat -}}</p>
-        {{- end -}}
         {{- if .Summary -}}
-        <p class="note content">
-          {{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}
-          <span class="mldr">&mldr;{{- T "more" -}}</span>
+        {{- if .Params.subtitle -}}
+        <p class="note subtitle">
+          {{- .Params.subtitle | plainify | safeHTML -}}
+        </p>
+        {{- end -}}
+        {{- if .Date -}}
+        <p class="note date">
+          {{- .Date.Format $dateFormat -}}
+          &nbsp &bull; &nbsp
+          {{- if .ReadingTime -}}
+          {{- .ReadingTime -}}&nbsp min read
           {{- end -}}
         </p>
+        {{- end -}}
+        {{- if .Params.author -}}
+        <p class="note date author">
+          by:&nbsp{{- .Params.author | plainify | safeHTML -}}
+        </p>
+        {{- end -}}
         {{- end -}}
         {{- $relURL := .RelPermalink -}}
         {{- $imgs := .Params.imgs -}}
