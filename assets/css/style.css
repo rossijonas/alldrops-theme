@@ -798,6 +798,16 @@ p.note.subtitle {
   font-size: 21px;
 }
 
+.note.list .item,
+.article-container {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.article.header {
+  text-align: left;
+} 
+
 /* List Page - Post image on the left */ 
 a.note-item-container {
   display: flex;
@@ -812,7 +822,6 @@ div.note-item-content {
   flex: 7 1 0;
   padding: 0 0 0 10px;
 }
-
 
 @media (max-width: 800px) {
   a.note-item-container {
