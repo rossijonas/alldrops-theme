@@ -10,13 +10,13 @@ html {
   sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   font-size: 17px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 body {
   display: block;
   color: rgba(0,0,0,.85);
-  background-color: #f2f2f6;
+  background-color: #f9f9fd;
 
   word-break: normal;
   word-wrap: break-word;
@@ -143,7 +143,7 @@ th {
 }
 
 a {
-  color: #007aff;
+  color: #406599;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -194,7 +194,7 @@ acronym {
 .base-body {
   display: block;
   margin: -1px auto;
-  max-width: 830px;
+  max-width: 780px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   overflow: hidden;
@@ -204,6 +204,8 @@ acronym {
   padding-top: 20px;
   padding-bottom: 20px;
   min-height: 64px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .header.wrap {
@@ -251,18 +253,17 @@ acronym {
 }
 
 .site.slogan {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   text-align: center;
+  margin-top: 20px;
 }
 
 .site.slogan .title {
   display: inline-block;
   text-align: initial;
-  color: #4a5560;
+  color: rgba(0,0,0,.5);
   min-height: 22px;
-  padding: 10px 10px 6px;
-  border-bottom: 1px solid #e6e6e6;
 }
 
 .nav.item {
@@ -277,10 +278,9 @@ acronym {
 
 .footer {
   font-size: 12px;
-  color: #4a5560;
-  margin-top: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  color: rgba(0,0,0,.5);
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .footer-wrap {
@@ -343,7 +343,7 @@ acronym {
 }
 
 .note.date {
-  color: #4a5560;
+  color: rgba(0,0,0,.5);
 }
 
 .note.content {
@@ -379,13 +379,19 @@ acronym {
   margin: 5px 0 0 5px;
 }
 
+.cover {
+  width: 100%;
+}
+
 .article.header {
-  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 24px;
 }
 
 .article.date {
-  color: #4a5560;
-  margin-top: 20px;
+  color: rgba(0,0,0,.5);
+  margin-top: 24px;
 }
 
 .tag,
@@ -401,7 +407,6 @@ acronym {
 
 .tag {
   color: #c41a16;
-  background-color: #f2f2f6;
 }
 
 .category {
@@ -413,7 +418,7 @@ acronym {
 .article.license,
 .article.navigation,
 .article.discussion {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .article.discussion {
@@ -448,7 +453,7 @@ acronym {
 .pagination {
   display: block;
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .pagination ul {
@@ -464,14 +469,14 @@ acronym {
 }
 
 .pagination ul li a {
-  color: #007aff;
+  color: #406599;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
 }
 
 .pagination ul li a.active {
-  background-color: #007aff;
+  background-color: #406599;
   color: #fff;
 }
 
@@ -481,29 +486,31 @@ acronym {
 
 .note.content,
 .article.markdown-body {
-  color: rgba(0,0,0,.6);
+  color: rgba(0,0,0,.65);
 }
 
 .note.list .item,
-.article.markdown-body {
+.article-container {
   padding: 20px;
   border-radius: 6px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,.12);
 }
 
 @media (max-width: 500px) {
   .note.list .item,
-  .article.markdown-body {
+  .article-container {
     border-radius: 0;
+    box-shadow: none;
   }
 
   .note.list,
-  .article.markdown-body {
+  .article-container {
     margin-left: -20px;
     margin-right: -20px;
   }
 }
 
-.article.markdown-body {
+.article-container {
   background-color: #fff;
 }
 
@@ -520,6 +527,7 @@ acronym {
 .article.markdown-body h4,
 .article.markdown-body h5,
 .article.markdown-body h6 {
+  color: rgba(0,0,0,.8);
   margin-top: 24px;
   margin-bottom: 20px;
 }
@@ -530,14 +538,44 @@ acronym {
   border-bottom: 1px solid #e6e6e6;
 }
 
+.article.markdown-body img {
+  -ms-transform: scale(1);
+  -ms-transition: transform 0.25s ease-in-out 0s;
+
+  -moz-transform: scale(1);
+  -moz-transition: transform 0.25s ease-in-out 0s;
+
+  -webkit-transform: scale(1);
+  -webkit-transition: transform 0.25s ease-in-out 0s;
+
+  transform: scale(1);
+  transition: transform 0.25s ease-in-out 0s;
+}
+
+.article.markdown-body img:hover {
+  -ms-transform: scale(1.04);
+  -ms-transition: transform 0.25s ease-in-out 0s;
+
+  -moz-transform: scale(1.04);
+  -moz-transition: transform 0.25s ease-in-out 0s;
+
+  -webkit-transform: scale(1.04);
+  -webkit-transition: transform 0.25s ease-in-out 0s;
+
+  transform: scale(1.04);
+  transition: transform 0.25s ease-in-out 0s;
+}
+
 .article.markdown-body blockquote,
 .article.markdown-body q {
   opacity: .85;
 }
 
 .article.markdown-body blockquote {
-  padding: 0 1em;
-  border-left: .25em solid #75a4f8;
+  padding: .95em;
+  border-radius: 6px;
+  border-left: 6px solid #fee450;
+  background-color: #fbf8e8;
 }
 
 .article.markdown-body q::before,

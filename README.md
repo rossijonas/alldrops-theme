@@ -20,7 +20,8 @@ Features
 - Custom CSS/SASS/SCSS supporting
 - Custom JS supporting
 - Custom header right items supporting
-- Builtin `plist` shortcode for API document.
+- Builtin `plist` shortcode for API document
+- Custom article cover supporting
 
 Preview the exampleSite:
 
@@ -68,6 +69,7 @@ dateFormat = "Monday, January 2, 2006"  # if unset, default is "2006-01-02"
 logo = ""  # if you have a logo png
 slogan = "100% JavaScript-free"
 license = ""  # CC License
+fullRss = false # Puts entire HTML post into rss 'description' tag. If unset, default is false.
 
 [params.comments]
 enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
@@ -78,7 +80,7 @@ use = "katex"  # option: "katex", "mathjax". default: "katex"
 
 [params.syntax]
 use = "none"  # builtin: "prismjs", "hljs". "none" means Chroma
-theme = "dracula"
+theme = "xcode"
 darkTheme = "xcode-dark"  # apply this theme in dark mode
 
 [params.nav]
@@ -220,8 +222,8 @@ You can relayout copyright like this:
 {{- $copyright := . -}}
 <div style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:space-between;">
 <p style="flex-shrink: 0;">{{- $copyright -}}</p>
-<p><span>Powered by </span><a 
-    href="https://gohugo.io" target="_blank">Hugo</a><span> and the </span><a 
+<p><span>Powered by </span><a
+    href="https://gohugo.io" target="_blank">Hugo</a><span> and the </span><a
     href="https://themes.gohugo.io/hugo-notepadium/" target="_blank">Notepadium</a></p>
 </div>
 ```
@@ -290,7 +292,7 @@ An example navigation-items.html:
     {{- range $nav.custom -}}
         {{- $url := .url | safeURL -}}
         {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
-        <a class="nav item" href="{{- $url -}}" 
+        <a class="nav item" href="{{- $url -}}"
             {{- if strings.HasPrefix $url "http" -}}target="_blank"
             {{- end -}}>{{- .title -}}</a>
     {{- end -}}
@@ -348,6 +350,17 @@ Example:
 ```
 
 ![](https://raw.githubusercontent.com/cntrump/hugo-notepadium/master/images/05.png)
+
+### Custom article cover
+
+Set `01.png` as cover, example:
+
+```toml
++++
+title = "..."
+cover = "01.png"
++++
+```
 
 ## Thanks
 
