@@ -16,7 +16,7 @@
         {{- if .Summary -}}
         {{- if .Params.subtitle -}}
         <p class="note subtitle">
-          {{- .Params.subtitle | plainify | safeHTML -}}
+          {{- .Params.subtitle | safeHTML -}}
         </p>
         {{- end -}}
         {{- if .Date -}}

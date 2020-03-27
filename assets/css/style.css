@@ -767,6 +767,10 @@ body {
   background-color: white;
 }
 
+h1 {
+  font-size: 35px;
+}
+
 a:link {
   color: black;
 }
@@ -789,13 +793,18 @@ a.category {
   background-color: white;
 }
 
-p.note.subtitle {
+.subtitle {
   font-weight: bold;
   color: rgba(0,0,0,.54);
 }
 
 .note.title {
   font-size: 21px;
+}
+
+h2.article.subtitle {
+  padding-top: 20px;
+  font-weight: normal;
 }
 
 .note.list .item,
@@ -824,6 +833,13 @@ div.note-item-content {
 }
 
 @media (max-width: 800px) {
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+
   a.note-item-container {
     display: block;
   }
