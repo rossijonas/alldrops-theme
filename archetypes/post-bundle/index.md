@@ -7,17 +7,19 @@ lastmod = {{ .Date }}
 
 description = ""
 
+publications = "" 
+
 categories = []
 
 tags = []
 
-image = ""
+image = "" # arcticle cover image (compatible with medium-to-hugo tool)
 
-images = []
+images = [] # all article images (compatible with medium-to-hugo tool)
+
+aliases = [] # article slug on medium (compatible with medium-to-hugo tool)
 
 imgs = []
-
-aliases = []
 
 readingTime = true  # show reading time after article date
 toc = true
