@@ -761,10 +761,12 @@ acronym {
 
 /* alldrops.info - custom */
 
-/* General layout */
-
 body {
   background-color: white;
+}
+
+.base-body {
+  max-width: 1032px;
 }
 
 h1 {
@@ -802,7 +804,8 @@ a.category {
   font-size: 21px;
 }
 
-h2.article.subtitle {
+h2.article.subtitle,
+.publication.subtitle {
   padding-top: 20px;
   font-weight: normal;
 }
@@ -817,10 +820,16 @@ h2.article.subtitle {
   text-align: left;
 } 
 
-/* List Page - Post image on the left */ 
-a.note-item-container {
+a.note-item-container,
+.publication-header-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.publication-header-container {
+  justify-content: center;
+  margin: 40px 0 25px 0;
+  min-height: 150px;
 }
 
 div.note-item-post-cover {
@@ -832,6 +841,19 @@ div.note-item-content {
   padding: 0 0 0 10px;
 }
 
+div.publication-header-logo {
+  flex: 1 1 0;
+  align-self: center;
+  padding-right: 20px;
+}
+
+div.publication-header-description {
+  flex: 1 1 0;
+  align-self: center;
+  padding-left:25px;
+  border-left: 10px solid rgba(0,0,0,.20); 
+}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 26px;
@@ -840,7 +862,8 @@ div.note-item-content {
     font-size: 18px;
   }
 
-  a.note-item-container {
+  a.note-item-container,
+  .publication-header-container {
     display: block;
   }
 }

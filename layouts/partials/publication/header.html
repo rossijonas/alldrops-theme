@@ -1,0 +1,25 @@
+{{- $title := T .Title -}}
+{{- if not $title -}}
+{{- $title = .Title -}}
+{{- end -}}
+
+<section class="publication-header-container">
+  {{- if .Params.logo -}}
+  <div class="publication-header-logo">
+    <img src="{{- .Params.logo -}}" alt="{{- $title -}}"/>
+  </div>
+  {{- end -}}
+  <div class="publication-header-description">
+    <h1 class="publication title">
+      {{- $title -}}
+    </h1>
+    {{- with .Params.subtitle -}}
+    <div class="publication slogan">
+      <span class="publication subtitle">
+        {{- . | safeHTML -}}
+      </span>
+    </div>
+    {{- end -}}
+</section>
+
+

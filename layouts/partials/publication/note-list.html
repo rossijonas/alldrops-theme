@@ -4,7 +4,6 @@
 {{- $dateFormat := site.Params.dateFormat -}}
 {{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
 <ul class="note list">
-  <h1>PUBLICATION-NOTE-LIST</h1>
   {{- range $paginator.Pages -}}
   <li class="item">
     <a class="note note-item-container" href="{{- .RelPermalink -}}">

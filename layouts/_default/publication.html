@@ -6,14 +6,9 @@
 {{- if not $title -}}
 {{- $title = .Title -}}
 {{- end -}}
-<section class="article header">
-  <img src="{{- .Params.logo -}}" alt="">
-  <!-- TESTE PASSING COLOR TO CSS -->
-  <h1 style="color:{{- .Params.color -}}">
-    {{- $title -}}
-    <!-- check Hugo shortcodes and Notepadium custom css --> 
-  </h1>
-</section>
+
+{{- partial "publication/header.html" . -}}
+
 {{- if .Content -}}
 <article class="article markdown-body">
     <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
@@ -22,7 +17,7 @@
 {{- end -}}
 <!-- Ranges through content/posts/*.md -->
 
-{{- partial "publication-note-list.html" $paginator -}}
+{{- partial "publication/note-list.html" $paginator -}}
 {{- partial "pagination.html" $paginator -}}
 
 {{- end -}}
