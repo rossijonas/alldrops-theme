@@ -28,9 +28,29 @@
           {{- end -}}
         </p>
         {{- end -}}
-        {{- if .Params.author -}}
+        {{- if or .Params.author .Params.publications -}}
         <p class="note date author">
-          by:&nbsp{{- .Params.author | plainify | safeHTML -}}
+          by&nbsp
+          <span>
+            {{- .Params.author | plainify | safeHTML -}}
+          </span>
+          &nbspat&nbsp
+          {{ $articleParams := .Params }}
+          {{- range .Site.Pages -}}
+          {{- if eq .Page.Name $articleParams.publications -}}
+          <span
+            class="publication-meta"
+            style="--highlight-color: {{- .Page.Params.color -}};"
+            >
+          <img 
+            src="{{.Page.Params.Favicon}}"
+            alt="publication favicon"
+            class="publication-favicon"
+            />
+            {{- $articleParams.publications | plainify | safeHTML -}}
+          </span>
+          {{- end -}}
+          {{- end -}}
         </p>
         {{- end -}}
         {{- end -}}
@@ -48,7 +68,6 @@
         </span>{{- end -}}
       </div>
     </a>
-    {{- partial "note-labels.html" . -}}
   </li>
   {{- end -}}
 </ul>

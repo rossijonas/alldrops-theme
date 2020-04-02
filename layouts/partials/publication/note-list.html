@@ -30,7 +30,7 @@
         {{- end -}}
         {{- if .Params.author -}}
         <p class="note date author">
-          by:&nbsp{{- .Params.author | plainify | safeHTML -}}
+          by&nbsp{{- .Params.author | plainify | safeHTML -}}
         </p>
         {{- end -}}
         {{- end -}}
@@ -48,7 +48,6 @@
         </span>{{- end -}}
       </div>
     </a>
-    {{- partial "note-labels.html" . -}}
   </li>
   {{- end -}}
 </ul>

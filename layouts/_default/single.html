@@ -2,15 +2,27 @@
 
 {{- $justify := false -}}
 {{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
+
+<!-- Add publication header if post belongs to it -->
+{{- if .Params.publications  -}}
+{{- $publication := .Params.publications -}}
+{{- range .Site.Pages -}}
+{{- if eq .Page.Name $publication -}}
+{{- partial "publication/header.html" .Page -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+
 <div class="article-container">
-    {{- partial "article-header.html" . -}}
-    <article class="article markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
-        {{- with .Params.cover -}}<p><img class="cover" src="{{- . | safeURL -}}" alt></p>{{- end -}}
-        {{- .Content -}}
-    </article>
-    {{- partial "article-labels.html" . -}}
-    {{- partial "article-license.html" . -}}
-    {{- partial "article-author.html" . -}}
+  {{- partial "article-header.html" . -}}
+  <article class="article markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
+    {{- with .Params.cover -}}<p><img class="cover" src="{{- . | safeURL -}}" alt></p>{{- end -}}
+    {{- .Content -}}
+  </article>
+  {{- partial "article-labels.html" . -}}
+  {{- partial "article-license.html" . -}}
+  {{- partial "article-author.html" . -}}
 </div>
 {{- partial "article-bottom-navigation.html" . -}}
 {{- partial "article-comments.html" . -}}

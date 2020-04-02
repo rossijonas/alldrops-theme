@@ -841,17 +841,34 @@ div.note-item-content {
   padding: 0 0 0 10px;
 }
 
-div.publication-header-logo {
+.publication-header-link,
+.publication-header-logo,
+.publication-header-description {
   flex: 1 1 0;
   align-self: center;
+}
+
+img.publication-favicon {
+  max-height: 25px;
+  margin-right: 5px;
+}
+
+.publication-meta {
+  border-bottom: 2px solid var(--highlight-color);
+}
+
+.publication-header-link:hover {
+  text-decoration: none;
+}
+
+.publication-header-logo {
   padding-right: 20px;
 }
 
-div.publication-header-description {
-  flex: 1 1 0;
-  align-self: center;
+.publication-header-description {
   padding-left:25px;
-  border-left: 10px solid rgba(0,0,0,.20); 
+  border-left: 10px solid var(--highlight-color);
+  rgba(0,0,0,.20); 
 }
 
 @media (max-width: 800px) {

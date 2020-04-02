@@ -3,11 +3,15 @@
 {{- $title = .Title -}}
 {{- end -}}
 
-<section class="publication-header-container">
-  {{- if .Params.logo -}}
-  <div class="publication-header-logo">
-    <img src="{{- .Params.logo -}}" alt="{{- $title -}}"/>
-  </div>
+<section
+  class="publication-header-container"
+  style="--highlight-color: {{- .Params.color -}};"
+  >
+  <a class="publication-header-link" href="{{- .RelPermalink -}}">
+    {{- if .Params.logo -}}
+    <div class="publication-header-logo">
+      <img src="{{- .Params.logo -}}" alt="{{- $title -}}"/>
+    </div>
   {{- end -}}
   <div class="publication-header-description">
     <h1 class="publication title">
@@ -20,6 +24,6 @@
       </span>
     </div>
     {{- end -}}
+  </a>
 </section>
-
 
