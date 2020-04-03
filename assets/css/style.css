@@ -763,6 +763,7 @@ acronym {
 
 :root {
   --main-grey: rgba(0,0,0,.54);
+  --light-grey: rgba(0,0,0,.40);
   --highlight-grey: rgba(0,0,0,.24);
 }
 
@@ -886,6 +887,15 @@ img.publication-favicon {
 .publication-header-description {
   padding-left:25px;
   border-left: 10px solid var(--highlight-color, var(--highlight-grey));
+}
+
+.pagination ul li a {
+  color: var(--highlight-color, var(--light-grey));
+}
+
+.pagination ul li a.active {
+  background-color: var(--highlight-color, var(--highlight-grey));
+  color: #fff;
 }
 
 @media (max-width: 800px) {
