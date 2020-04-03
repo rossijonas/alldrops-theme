@@ -13,7 +13,7 @@ categories = []
 
 tags = []
 
-image = "" # arcticle cover image (compatible with medium-to-hugo tool)
+image = "/posts/{{ .Name }}/images/cover.png" # add arcticle cover image (compatible with medium-to-hugo tool)
 
 images = [] # all article images (compatible with medium-to-hugo tool)
 

@@ -3,18 +3,25 @@
 {{- $justify := false -}}
 {{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
 
+{{- $highlightColor := "" -}} 
+
 <!-- Add publication header if post belongs to it -->
 {{- if .Params.publications  -}}
 {{- $publication := .Params.publications -}}
 {{- range .Site.Pages -}}
 {{- if eq .Page.Name $publication -}}
 {{- partial "publication/header.html" .Page -}}
+{{- $highlightColor = .Page.Params.color}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
 
 
-<div class="article-container">
+
+<div
+  class="article-container"
+  style="--highlight-color:{{- $highlightColor -}};"
+  >
   {{- partial "article-header.html" . -}}
   <article class="article markdown-body" {{- if $justify -}}style="text-align: justify;" {{- end -}}>
     {{- with .Params.cover -}}<p><img class="cover" src="{{- . | safeURL -}}" alt></p>{{- end -}}

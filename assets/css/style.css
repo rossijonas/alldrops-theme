@@ -761,6 +761,11 @@ acronym {
 
 /* alldrops.info - custom */
 
+:root {
+  --main-grey: rgba(0,0,0,.54);
+  --highlight-grey: rgba(0,0,0,.24);
+}
+
 body {
   background-color: white;
 }
@@ -777,27 +782,34 @@ a:link {
   color: black;
 }
 
-a.tag,
-a.category {
-  color: black;
-  border: none;
-  text-decoration: initial:
+.labels{
+  padding-top: 25px;
 }
 
-a.tag {
-  background-color: white;
-  text-transform: lowercase;
+.label {
+  font-size: .8rem;
+  color: var(--main-grey);
   font-style: italic;
+}
+
+a.tag,
+a.category {
+  color: var(--main-grey);
+  text-decoration: initial:
+  background-color: white;
+  background-color: rgba(0,0,0,.05);
+  border: none;
+  border-radius: 2px;
+  padding: 7px;
 }
 
 a.category {
   font-weight: bold;
-  background-color: white;
 }
 
 .subtitle {
   font-weight: bold;
-  color: rgba(0,0,0,.54);
+  color: var(--main-grey);
 }
 
 .note.title {
@@ -819,6 +831,12 @@ h2.article.subtitle,
 .article.header {
   text-align: left;
 } 
+
+.article.markdown-body blockquote {
+  border-radius: 6px;
+  border-left: 6px solid var(--highlight-color, var(--highlight-grey)); 
+  background-color: rgba(0,0,0,0);
+}
 
 a.note-item-container,
 .publication-header-container {
@@ -854,7 +872,7 @@ img.publication-favicon {
 }
 
 .publication-meta {
-  border-bottom: 2px solid var(--highlight-color);
+  border-bottom: 1px solid var(--highlight-color, var(--highlight-grey));
 }
 
 .publication-header-link:hover {
@@ -867,8 +885,7 @@ img.publication-favicon {
 
 .publication-header-description {
   padding-left:25px;
-  border-left: 10px solid var(--highlight-color);
-  rgba(0,0,0,.20); 
+  border-left: 10px solid var(--highlight-color, var(--highlight-grey));
 }
 
 @media (max-width: 800px) {

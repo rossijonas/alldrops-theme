@@ -13,7 +13,6 @@
       </div>
       <div class="note-item-content">
         <p class="note title">{{- .Title | safeHTML -}}</p>
-        {{- if .Summary -}}
         {{- if .Params.subtitle -}}
         <p class="note subtitle">
           {{- .Params.subtitle | safeHTML -}}
@@ -32,7 +31,6 @@
         <p class="note date author">
           by&nbsp{{- .Params.author | plainify | safeHTML -}}
         </p>
-        {{- end -}}
         {{- end -}}
         {{- $relURL := .RelPermalink -}}
         {{- $imgs := .Params.imgs -}}
