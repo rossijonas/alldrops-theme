@@ -1,0 +1,11 @@
+{{- if gt .Site.Taxonomies.publications 0 -}}
+<div class="nav wrap">
+  <nav class="nav publications-navbar">
+  {{- range .Site.Taxonomies.publications -}}
+    <a class="nav item publications-navbar-item" href="{{- .Page.URL -}}">
+      {{- .Page.Title | safeHTML -}}
+    </a>
+  {{- end -}}
+  </nav>
+</div>
+{{- end -}}

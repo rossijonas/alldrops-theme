@@ -273,7 +273,6 @@ acronym {
   padding: 4px 6px;
   margin: 5px 5px 5px 0;
   border-radius: 20px;
-  color: black; /* added */
 }
 
 .footer {
@@ -816,6 +815,24 @@ a.category {
 .note.title {
   font-size: 21px;
 }
+
+.nav.item {
+   color: black;
+}
+
+.nav.publications-navbar {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+
+}
+
+.nav.publications-navbar-item {
+  text-transform: uppercase;
+  font-size: .8rem;
+  color: var(--main-grey);
+}
+
 
 h2.article.subtitle,
 .publication.subtitle {

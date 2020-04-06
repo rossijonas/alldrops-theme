@@ -1,18 +1,28 @@
 {{- $nav := . -}}
 {{- if or $nav.showCategories $nav.showTags $nav.custom -}}
-<div class="nav wrap"><nav class="nav">
+<div class="nav wrap">
+  <nav class="nav">
     {{- if $nav.showCategories -}}
-        <a class="nav item" href="{{- `/categories/` | relLangURL -}}">{{- T "Categories" -}}</a>
+    <a class="nav item" href="{{- `/categories/` | relLangURL -}}">
+      {{- T "Categories" -}}
+    </a>
     {{- end -}}
     {{- if $nav.showTags -}}
-        <a class="nav item" href="{{- `/tags/` | relLangURL -}}">{{- T "Tags" -}}</a>
+    <a class="nav item" href="{{- `/tags/` | relLangURL -}}">
+      {{- T "Tags" -}}
+    </a>
     {{- end -}}
     {{- range $nav.custom -}}
-        {{- $url := .url | safeURL -}}
-        {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
-        <a class="nav item" href="{{- $url -}}" 
-            {{- if strings.HasPrefix $url "http" -}}target="_blank"
-            {{- end -}}>{{- .title -}}</a>
+    {{- $url := .url | safeURL -}}
+    {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
+    <a class="nav item" href="{{- $url -}}"
+      {{- if strings.HasPrefix $url "http" -}}
+      target="_blank"
+      {{- end -}}
+      >
+      {{- .title -}}
+    </a>
     {{- end -}}
-</nav></div>
+  </nav>
+</div>
 {{- end -}}

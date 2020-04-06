@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{- site.Language.Lang -}}">
-{{- partial "head.html" . -}}
-
-<body>
+  {{- partial "head.html" . -}}
+  <body>
     <div class="base-body">
-        {{- partial "header.html" . -}}
-        <div id="content">
-            {{- block "main" . -}}{{- end -}}
-        </div>
-        {{- partial "footer.html" . -}}
+      {{- if .IsHome -}}
+      {{- partial "header.html" . -}}
+      {{- partial "homepage-publications-navbar.html" . -}}
+      {{- else -}}
+      {{- partial "header.html" . -}}
+      {{- end -}}
+      <div id="content">
+        {{- block "main" . -}}{{- end -}}
+      </div>
+      {{- partial "footer.html" . -}}
     </div>
-</body>
+  </body>
 
 </html>
