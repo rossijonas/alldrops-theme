@@ -778,6 +778,13 @@ h1 {
   font-size: 35px;
 }
 
+.site.header {
+  padding-top: 18px;
+  padding-bottom: 22px;
+  margin-bottom: 0px;
+  border: none;
+}
+
 a:link {
   color: black;
 }
@@ -824,7 +831,7 @@ a.category {
   display: flex;
   align-items: center;
   overflow-x: auto;
-
+  margin-bottom: 20px;
 }
 
 .nav.publications-navbar-item {
@@ -832,7 +839,6 @@ a.category {
   font-size: .8rem;
   color: var(--main-grey);
 }
-
 
 h2.article.subtitle,
 .publication.subtitle {
