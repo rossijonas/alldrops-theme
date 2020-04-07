@@ -1,10 +1,15 @@
 {{- if gt .Site.Taxonomies.publications 0 -}}
+{{- $publications := .Site.Taxonomies.publications.ByCount -}}
 <div class="">
   <nav class="nav publications-navbar">
-  {{- range .Site.Taxonomies.publications -}}
-    <a class="nav item publications-navbar-item" href="{{- .Page.URL -}}">
+  {{- range $publications -}}
+  {{- if ne .Page.Title "Publications" -}}
+    <a
+      class="nav item publications-navbar-item"
+      href="{{- .Page.Permalink -}}">
       {{- .Page.Title | safeHTML -}}
     </a>
+  {{- end -}}
   {{- end -}}
   </nav>
 </div>
