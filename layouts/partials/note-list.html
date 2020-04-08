@@ -4,14 +4,20 @@
 {{- $dateFormat := site.Params.dateFormat -}}
 {{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
 <ul class="note list">
-  {{- range $paginator.Pages -}}
-  <li class="item">
-    <a class="note note-item-container" href="{{- .RelPermalink -}}">
+  {{- range $key, $value :=  $paginator.Pages -}}
+  {{- $featured := "" -}}
+  {{- if and (eq $key 0) (eq $paginator.PageNumber 1) -}}
+  {{- $featured = "-featured" -}}
+  {{- end -}}
+  <li class="item{{- $featured -}}">
+    <a
+      class="note note-item-container{{- $featured -}}"
+      href="{{- .RelPermalink -}}">
       {{- if .Params.image -}}
-      <div class="note-item-post-cover">
+      <div class="note-item-post-cover{{- $featured -}}">
         <img src="{{.Params.image}}" alt="post cover">{{- end -}}
       </div>
-      <div class="note-item-content">
+      <div class="note-item-content{{- $featured -}}">
         <p class="note title">{{- .Title | safeHTML -}}</p>
         {{- if .Params.subtitle -}}
         <p class="note subtitle">
