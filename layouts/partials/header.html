@@ -3,12 +3,15 @@
     <span class="header left-side">
       <a class="site home" href="{{- `/` | relLangURL -}}">
         {{- $logo := site.Params.logo -}}
+        {{- $showTitle := site.Params.showTitle -}}
         {{- if $logo -}}
         <img class="site logo" src="{{- $logo | relURL -}}" alt />
         {{- end -}}
+        {{- if $showTitle -}}
         <span class="site name">
           {{- site.Title | safeHTML -}}
         </span>
+        {{- end -}}
       </a>
     </span>
     <span class="header right-side">
