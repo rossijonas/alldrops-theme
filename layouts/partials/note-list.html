@@ -39,6 +39,7 @@
           <span>
             {{- .Params.author | plainify | safeHTML -}}
           </span>
+          {{- if .Params.publications -}}
           &nbspat&nbsp
           {{ $articleParams := .Params }}
           {{- range .Site.Pages -}}
@@ -54,6 +55,7 @@
             />
             {{- $articleParams.publications | plainify | safeHTML -}}
           </span>
+          {{- end -}}
           {{- end -}}
           {{- end -}}
         </p>

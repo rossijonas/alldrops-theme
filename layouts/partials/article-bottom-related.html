@@ -1,0 +1,64 @@
+{{- $page := . -}}
+
+{{- $dateFormat := site.Params.dateFormat -}}
+{{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
+
+<!-- Default related posts to all posts. -->
+{{- $relPosts := .Site.RegularPages -}}
+<!-- Default related title to site title. -->
+{{- $relTitle := .Site.Title -}}
+
+<!-- If post has publication, related posts belongs to publications
+  and related title is publication title. -->
+{{- if .Params.publications -}}
+{{- $relPubPosts := where .Site.Pages ".Params.publications" "eq" $page.Params.publications -}}
+<!-- If publications has only the post shown on the page, keep defaults --> 
+{{- if gt (len $relPubPosts) 1 -}}
+{{- $relPosts = $relPubPosts -}}
+{{- $relTitle = .Params.Publications -}}
+{{- end -}}
+{{- end -}}
+
+<!-- Give only first 3 related posts. -->
+{{- $relPosts = first 3 (where $relPosts ".Title" "ne" $page.Title) -}}
+
+<section class="article related">
+  <p class="subtitle related">Read more on {{$relTitle}}:</p>
+  <ul class="note list related">
+    {{- range $relPosts -}}
+    <li class="item">
+      <a class="note note-item-container" href="{{- .RelPermalink -}}">
+        {{- if .Params.image -}}
+        <div class="note-item-post-cover">
+          <img src="{{.Params.image}}" alt="post cover">{{- end -}}
+        </div>
+        <div class="note-item-content">
+          <p class="note title">{{- .Title | safeHTML -}}</p>
+          {{- if .Params.subtitle -}}
+          <p class="note subtitle">
+            {{- .Params.subtitle | safeHTML -}}
+          </p>
+          {{- end -}}
+          {{- if .Date -}}
+          <p class="note date">
+            {{- .Date.Format $dateFormat -}}
+            &nbsp &bull; &nbsp
+            {{- if .ReadingTime -}}
+            {{- .ReadingTime -}}&nbsp min read
+            {{- end -}}
+          </p>
+          {{- end -}}
+          {{- if or .Params.author .Params.publications -}}
+          <p class="note date author">
+            by&nbsp
+            <span>
+              {{- .Params.author | plainify | safeHTML -}}
+            </span>
+          </p>
+          {{- end -}}
+        </div>
+      </a>
+    </li>
+    {{- end -}}
+  </ul>
+</section>
