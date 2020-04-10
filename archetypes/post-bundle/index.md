@@ -30,3 +30,7 @@ license = ""  # CC License
 draft = true
 +++
 
+
+
+![image](/posts/{{ .Name }}/images/cover.png#layoutTextWidth)
+
