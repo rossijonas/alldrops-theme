@@ -787,6 +787,29 @@ h1 {
   border: none;
 }
 
+.site-favicon {
+  height: 32px;
+}
+
+.site.name {
+  font-size: 40px;
+  line-height: 0.8px;
+}
+
+.site.name.header-reduced {
+  font-size: 25px;
+  line-height: 0.8px;
+}
+
+div.header.wrap.header-reduced {
+  border-bottom: 1px solid var(--lightest-grey);
+}
+
+span.header.left-side.header-reduced {
+  border-right: 1px solid var(--lightest-grey);
+  padding-right: 10px;
+}
+
 a:link {
   color: black;
 }

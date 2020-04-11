@@ -7,7 +7,14 @@
       {{- partial "header.html" . -}}
       {{- partial "homepage-publications-navbar.html" . -}}
       {{- else -}}
-      {{- partial "header.html" . -}}
+      {{- partial "reduced-header.html" . -}}
+
+      <!-- Add publication header if it's a publication page -->
+      {{- if eq .Kind "taxonomy" -}}
+      {{- partial "publication/header.html" . -}}
+      {{- $highlightColor := .Params.color}}
+      {{- end -}}
+
       {{- end -}}
       <div id="content">
         {{- block "main" . -}}{{- end -}}

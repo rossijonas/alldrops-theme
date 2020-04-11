@@ -5,12 +5,11 @@
 
 {{- $highlightColor := "" -}} 
 
-<!-- Add publication header if post belongs to it -->
+<!-- Get publication highlight color -->
 {{- if .Params.publications  -}}
 {{- $publication := .Params.publications -}}
 {{- range .Site.Pages -}}
 {{- if eq .Page.Name $publication -}}
-{{- partial "publication/header.html" .Page -}}
 {{- $highlightColor = .Page.Params.color}}
 {{- end -}}
 {{- end -}}

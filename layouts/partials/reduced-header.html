@@ -1,0 +1,21 @@
+<section id="header" class="site header">
+  <div class="header wrap header-reduced">
+    <span class="header left-side header-reduced">
+      <a class="site home" href="{{- `/` | relLangURL -}}">
+        {{- $favicon := site.Params.favicon -}}
+        {{- $showTitle := site.Params.showTitle -}}
+        {{- if $favicon -}}
+        <img class="site-favicon" src="{{- $favicon | relURL -}}" alt />
+        {{- end -}}
+        {{- if $showTitle -}}
+        <span class="site name header-reduced">
+          {{- site.Title | safeHTML -}}
+        </span>
+        {{- end -}}
+      </a>
+    </span>
+    <span class="header right-side">
+      {{- partial "navigation-items.html" site.Params.nav -}}
+    </span>
+  </div>
+</section>
