@@ -765,6 +765,7 @@ acronym {
   --light-grey: rgba(0,0,0,.40);
   --lightest-grey: rgba(0,0,0,.10);
   --highlight-grey: rgba(0,0,0,.24);
+  --dark-grey: rgba(0,0,0,.70);
 }
 
 body {
@@ -958,6 +959,15 @@ ul.note.list.related {
   border-top: 1px solid var(--lightest-grey);
   margin-top: 5px;
   padding-top: 18px;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+p.powerby>a:link {
+  color: var(--dark-grey); 
 }
 
 @media (max-width: 800px) {
