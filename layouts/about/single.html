@@ -1,0 +1,37 @@
+{{- define "main" -}}
+
+{{- $justify := false -}}
+{{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
+
+{{- $highlightColor := "" -}} 
+
+<!-- Get publication highlight color -->
+{{- if .Params.publications  -}}
+{{- $publication := .Params.publications -}}
+{{- range .Site.Pages -}}
+{{- if eq .Page.Name $publication -}}
+{{- $highlightColor = .Page.Params.color}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+<div
+  class="article-container"
+  style="--highlight-color:{{- $highlightColor -}};"
+  >
+  <article
+    class="article markdown-body"
+    {{- if $justify -}}
+    style="text-align: justify;"
+    {{- end -}}>
+    {{- with .Params.image -}}
+    <p><img class="cover" src="{{- . | safeURL -}}" alt></p>
+    {{- end -}}
+    <h2>Hello from about page!</h2>
+    {{- .Content -}}
+  </article>
+  {{- partial "article-labels.html" . -}}
+  {{- partial "article-license.html" . -}}
+  {{- partial "article-author.html" . -}}
+</div>
+{{- end -}}
