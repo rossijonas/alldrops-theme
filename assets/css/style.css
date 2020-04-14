@@ -934,7 +934,15 @@ li.item-featured {
   grid-column-end: span 6;
 }
 
-li.item-large {
+li.item-pages {
+  grid-column-start: inherit;
+  grid-column-end: span 2;
+}
+
+li.item-pages:nth-of-type(1), 
+li.item-pages:nth-of-type(2), 
+li.item-pages:nth-of-type(6), 
+li.item-pages:nth-of-type(7) {
   grid-column-start: inherit;
   grid-column-end: span 3;
 }

@@ -6,13 +6,13 @@
 <ul class="note list">
   {{- range $key, $value :=  $paginator.Pages -}}
   {{- $featured := "" -}}
-  {{- $large := "" -}}
+  {{- $pages := "" -}}
   {{- if and (eq $key 0) (eq $paginator.PageNumber 1) -}}
   {{- $featured = "-featured" -}}
-  {{- else if and (or (gt (mod $key 6) 0) (gt (modBool $key 7) 0)) (ne $paginator.PageNumber 1) -}}
-  {{- $large = "-large" -}}
+  {{- else if (ne $paginator.PageNumber 1) -}}
+  {{- $pages = "-pages" -}}
   {{- end -}}
-  <li class="item{{- $featured -}}{{- $large -}}">
+  <li class="item{{- $featured -}}{{- $pages -}}">
     <a
       class="note note-item-container{{- $featured -}}"
       href="{{- .RelPermalink -}}">
