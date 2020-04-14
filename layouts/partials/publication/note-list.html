@@ -4,7 +4,7 @@
 {{- $dateFormat := site.Params.dateFormat -}}
 {{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
 <ul class="note list">
-  {{- range $key, $value :=  $paginator.Pages -}}
+  {{- range $key, $value := where $paginator.Pages ".Type" "eq" "posts" -}}
   {{- $featured := "" -}}
   {{- if and (eq $key 0) (eq $paginator.PageNumber 1) -}}
   {{- $featured = "-featured" -}}

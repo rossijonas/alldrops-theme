@@ -14,12 +14,13 @@
   {{- $relPubPosts := where .Site.Pages ".Params.publications" "eq" $page.Params.publications -}}
   <!-- If publications has only the post shown on the page, keep defaults --> 
   {{- if gt (len $relPubPosts) 1 -}}
-  {{- $relPosts = $relPubPosts -}}
+  {{- $relPosts = where $relPubPosts ".Type" "eq" "posts" -}}
   {{- $relTitle = .Params.Publications -}}
   {{- end -}}
   {{- end -}}
 
   <!-- Give only first 3 related posts. -->
+  {{- $relPosts = where $relPosts ".Type" "eq" "posts" -}}
   {{- $relPosts = first 3 (where $relPosts ".Title" "ne" $page.Title) -}}
 
   <section class="article related">
