@@ -802,7 +802,7 @@ h1 {
 }
 
 div.header.wrap.header-reduced {
-  border-bottom: 1px solid var(--lightest-grey);
+  /*border-bottom: 1px solid var(--lightest-grey);*/
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -954,7 +954,10 @@ a.note-item-container {
 .publication-header-container {
   justify-content: center;
   margin: 25px 0 25px 0;
+  padding: 45px 0 45px 0;
   min-height: 150px;
+  border-bottom: 1px solid var(--lightest-grey);
+  border-top: 1px solid var(--lightest-grey);
 }
 
 div.note-item-post-cover-featured {
