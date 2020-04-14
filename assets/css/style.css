@@ -907,7 +907,7 @@ h2.article.subtitle,
 
 ul.note.list {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 15% 15% 15% 15% 15% 15%;
   grid-template-rows: 25% 25% 25% 25%;
   column-gap: 25px;
   row-gap: 15px;
@@ -924,8 +924,18 @@ a.note-item-container-featured,
   padding: 0px 0px 0px 0px;
 }
 
+li.item {
+  grid-column-start: inherit;
+  grid-column-end: span 2;
+}
+
 li.item-featured {
   grid-column-start: 1;
+  grid-column-end: span 6;
+}
+
+li.item-large {
+  grid-column-start: inherit;
   grid-column-end: span 3;
 }
 
