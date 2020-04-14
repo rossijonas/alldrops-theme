@@ -781,9 +781,9 @@ h1 {
 }
 
 .site.header {
-  padding-top: 18px;
-  padding-bottom: 22px;
-  margin-bottom: 0px;
+  margin-top: 18px;
+  margin-bottom: 22px;
+  padding: 0;
   border: none;
 }
 
@@ -803,11 +803,29 @@ h1 {
 
 div.header.wrap.header-reduced {
   border-bottom: 1px solid var(--lightest-grey);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+div.header.wrap.header-reduced::after {
+  content: none;
+  width: none;
 }
 
 span.header.left-side.header-reduced {
-  border-right: 1px solid var(--lightest-grey);
   padding-right: 10px;
+  display: flex;
+}
+
+.site.slogan {
+  margin-top:5px;
+  text-align: left;
+}
+
+.site.slogan>.title {
+  color: var(--light-grey);
+  letter-spacing: 1.7px;
 }
 
 a:link {
@@ -917,7 +935,7 @@ a.note-item-container {
 
 .publication-header-container {
   justify-content: center;
-  margin: 40px 0 25px 0;
+  margin: 25px 0 25px 0;
   min-height: 150px;
 }
 
@@ -958,6 +976,17 @@ img.publication-favicon {
 
 .publication-header-logo {
   padding-right: 20px;
+}
+
+.publication-header-logo.header-reduced {
+  border-left: 1px solid var(--highlight-color, var(--lightest-grey));
+  height:32px;
+  padding-left: 15px;
+  margin-left: 15px;
+}
+
+.publication-header-logo.header-reduced>img {
+  height:32px;
 }
 
 .publication-header-description {

@@ -1,3 +1,23 @@
+{{- $title := T .Title -}}
+{{- if not $title -}}
+{{- $title = .Title -}}
+{{- end -}}
+
+{{- $highlightColor := "" -}} 
+{{- $pubLogo := "" -}}
+{{- $pubLink := "" -}}
+<!-- Get publication highlight color and publication logo-->
+{{- if .Params.publications  -}}
+{{- $publication := .Params.publications -}}
+{{- range .Site.Pages -}}
+{{- if eq .Page.Name $publication -}}
+{{- $highlightColor = .Page.Params.color -}}
+{{- $pubLogo = .Page.Params.logo -}}
+{{- $pubLink = .Page.RelPermalink -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
 <section id="header" class="site header">
   <div class="header wrap header-reduced">
     <span class="header left-side header-reduced">
@@ -13,6 +33,27 @@
         </span>
         {{- end -}}
       </a>
+      {{- if ne .Type "publications" -}}
+      <a class="site home" href="{{- $pubLink -}}">
+        {{- if $pubLogo -}}
+        <div
+          class="publication-header-logo header-reduced"
+          style="--highlight-color: {{- $highlightColor -}};"
+          >
+          <img
+            src="{{- $pubLogo -}}"
+            alt="{{- .Params.publications -}}"
+            />
+        </div>
+        {{- else -}}
+        <div class="publication-header-description">
+          <h1 class="publication title header-reduced">
+            {{- .Params.publications -}}
+          </h1>
+        </div>
+        {{- end -}}
+      </a>
+      {{- end -}}
     </span>
     <span class="header right-side">
       {{- partial "navigation-items.html" site.Params.nav -}}
