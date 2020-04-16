@@ -1043,6 +1043,10 @@ p.powerby>a:link {
   color: var(--dark-grey); 
 }
 
+.about-container {
+  border-left: 10px solid var(--highlight-color, var(--highlight-grey));
+}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 26px;

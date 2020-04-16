@@ -16,7 +16,7 @@
 {{- end -}}
 
 <div
-  class="article-container"
+  class="article-container about-container"
   style="--highlight-color:{{- $highlightColor -}};"
   >
   <article
@@ -27,11 +27,8 @@
     {{- with .Params.image -}}
     <p><img class="cover" src="{{- . | safeURL -}}" alt></p>
     {{- end -}}
-    <h2>Hello from about page!</h2>
     {{- .Content -}}
   </article>
-  {{- partial "article-labels.html" . -}}
-  {{- partial "article-license.html" . -}}
   {{- partial "article-author.html" . -}}
 </div>
 {{- end -}}
