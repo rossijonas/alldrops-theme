@@ -3,6 +3,9 @@
 {{- $justify := false -}}
 {{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
 
+{{- $title := .Site.Title -}}
+{{- $slogan := .Site.Params.slogan -}}
+{{- $logo := .Site.Params.logo -}}
 {{- $highlightColor := "" -}} 
 
 <!-- Get publication highlight color -->
@@ -10,7 +13,11 @@
 {{- $publication := .Params.publications -}}
 {{- range .Site.Pages -}}
 {{- if eq .Page.Name $publication -}}
-{{- $highlightColor = .Page.Params.color}}
+{{- $title = .Page.Params.title -}}
+{{- $title = .Page.Params.title -}}
+{{- $slogan = .Page.Params.subtitle -}}
+{{- $logo = .Page.Params.logo -}}
+{{- $highlightColor = .Page.Params.color -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
@@ -19,14 +26,23 @@
   class="article-container about-container"
   style="--highlight-color:{{- $highlightColor -}};"
   >
+  <div class="about-header">
+    <img
+      class="about-page-logo"
+      src="{{- $logo -}}"
+      alt="{{- $title -}} logo"/>
+    {{- with .Params.showTitle -}}
+    <h1 class="about title">
+      {{- $title -}}
+    </h1>
+    {{- end -}}
+    <h2 class="about subtitle">{{- $slogan -}}</h2>
+  </div>
   <article
-    class="article markdown-body"
+    class="about article markdown-body"
     {{- if $justify -}}
     style="text-align: justify;"
     {{- end -}}>
-    {{- with .Params.image -}}
-    <p><img class="cover" src="{{- . | safeURL -}}" alt></p>
-    {{- end -}}
     {{- .Content -}}
   </article>
   <h3>Author(s):</h3>

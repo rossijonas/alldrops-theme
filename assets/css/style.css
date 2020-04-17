@@ -824,6 +824,7 @@ span.header.left-side.header-reduced {
 }
 
 .site.slogan>.title {
+  margin-top: 10px;
   color: var(--light-grey);
   letter-spacing: 1.7px;
 }
@@ -884,7 +885,8 @@ a.category {
 }
 
 h2.article.subtitle,
-.publication.subtitle {
+.publication.subtitle,
+.about.subtitle {
   padding-top: 20px;
   font-weight: normal;
 }
@@ -1015,6 +1017,11 @@ img.publication-favicon {
   border-left: 10px solid var(--highlight-color, var(--highlight-grey));
 }
 
+.publication.subtitle,
+.about.subtitle {
+  letter-spacing: 1.7px;
+}
+
 .pagination ul li a {
   color: var(--highlight-color, var(--light-grey));
 }
@@ -1045,8 +1052,34 @@ p.powerby>a:link {
 
 .about-container {
   border-left: 10px solid var(--highlight-color, var(--highlight-grey));
+  border-right: 10px solid var(--highlight-color, var(--highlight-grey));
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
+.about-page-logo,
+.about.title,
+.about.subtitle,
+.about.article {
+  padding-bottom: 40px;
+}
+
+.about-page-logo {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.about.title,
+.about.subtitle {
+  text-align: center;
+}
+
+.about.title {
+  font-size: 3rem;
+}
+ 
 @media (max-width: 800px) {
   h1 {
     font-size: 26px;
@@ -1066,3 +1099,11 @@ p.powerby>a:link {
   }
 }
 
+@media (max-width: 600px) {
+  .about-container {
+    border-left: 8px solid var(--highlight-color, var(--highlight-grey));
+    border-right: 8px solid var(--highlight-color, var(--highlight-grey));
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
