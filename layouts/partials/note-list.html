@@ -45,7 +45,7 @@
           {{- if .Params.publications -}}
           &nbspat&nbsp
           {{ $articleParams := .Params }}
-          {{- range .Site.Pages -}}
+          {{- range where .Site.Pages "Type" "publications" -}}
           {{- if eq .Page.Name $articleParams.publications -}}
           <span
             class="publication-meta"
