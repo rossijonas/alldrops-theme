@@ -1,7 +1,7 @@
 +++
 title = "{{ replace .Name `-` ` ` | replaceRE `\d+ \d+ \d+_` `` | title }}"
 subtitle = ""
-author = {{ with .Site.Author.name }}"{{.}}"{{ else }} "" {{ end }}
+author = {{ with .GitInfo.AuthorEmail }}["{{.}}"]{{ else }}[]{{ end }}
 date = {{ .Date }}
 lastmod = {{ .Date }}
 
