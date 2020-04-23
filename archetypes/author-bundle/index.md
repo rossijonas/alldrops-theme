@@ -25,10 +25,10 @@ website = ""
 
 # Drop your profile pic inside content/authors/<nickname>/images/ directory
 # and replace the file name below.
-avatar = "/about/{{ .Name }}/images/avatar.png"
+avatar = "/authors/{{ .Name }}/images/avatar.png"
 
 # Write your short bio here.
-summary = "Hello, I'm Hugo, I am a passionate blogger that loves surfing and the Go programming language!"
+summary = "Hello, I'm Hugo, I am a passionate blogger who loves surfing and the Go programming language!"
 
 # Social neworks.
 [params.social]

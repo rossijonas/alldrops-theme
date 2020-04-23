@@ -1,3 +1,8 @@
-<section class="author">
-  <h2 class="subtitle">{{- .Params.author -}}</h2>
+{{ $author := .Params.author }}
+{{ $authorPage := .Site.GetPage (path.Join "/authors" $author) }}
+
+<section class="article-author">
+  {{ with $authorPage }}
+  {{ partial "author-card.html" . }}
+  {{ end }}
 </section>

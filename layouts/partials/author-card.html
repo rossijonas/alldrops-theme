@@ -1,0 +1,15 @@
+<a class="author-card" href="{{ .Permalink }}">
+  {{ with .Params.avatar }}
+
+  <div class="author-card-avatar">
+    <img
+      class="article avatar"
+      src="{{- . -}}"
+      alt="author avatar"/>
+  </div>
+  {{ end }}
+  <div class="author-card-content">
+    <h4>{{- .Params.fullName -}}</h4>
+    <p class="author-summary">{{- .Params.summary -}}</p>
+  </div>
+</a>
