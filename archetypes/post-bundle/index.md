@@ -1,6 +1,6 @@
 +++
 # Create new post with the `hugo new` command: 
-# `hugo new --kind post-bundle posts/<section>/<YY-MM-DD>_<post-name>`
+# `hugo new --kind post-bundle posts/<sub-section>/<YY-MM-DD>_<post-name>`
 
 date = {{ .Date }}
 lastmod = {{ .Date }}

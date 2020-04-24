@@ -4,10 +4,6 @@
 
 # `name` is the site or section name that this about page belongs to.
 # 
-# When creating the page with the `hugo new` command, make sure the
-# <name> field is cased exactly as the site/section name, (example
-# `posts/MY-Section` to match `MY Section` post's subsection). 
-# 
 # Use site name if it is the website's main about page.
 name = "{{ replace .Name `-` ` ` }}"
 

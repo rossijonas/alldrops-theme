@@ -1,6 +1,6 @@
 +++
 # Create new posts's subsection with the `hugo new` command: 
-# `hugo new --kind post-subsection-bundle posts/<Section-Name>`
+# `hugo new --kind post-subsection-bundle posts/<sub-section>`
 
 # Section name.
 name = "{{ replace .Name `-` ` ` }}"
