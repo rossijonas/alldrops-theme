@@ -31,25 +31,10 @@ website = ""
 avatar = "/authors/{{ .Name }}/images/avatar.png"
 
 # Write your short bio here.
-summary = "Hello, I'm Hugo, I am a passionate blogger who loves surfing and the Go programming language!"
+bio = "Hello, I'm Hugo, I am a passionate blogger who loves surfing and the Go programming language!"
 
 # Social neworks.
 [params.social]
   twitter = "https:/twitter.com"
 
-
-
-# This page's content will be placed as the author custom description.
 +++
-
-<!-- Write about yourself here! -->
-
-#### About me
-
-I love reef breaks on prefect offshore wind days, I dream about stand up backside barrels everyday!
-
-#### Carreer Achievements
-
-I helped the development of many open-source porojects such as [alldrops-theme](
-https://github.com/alldropsinfo/alldrops-theme)
-

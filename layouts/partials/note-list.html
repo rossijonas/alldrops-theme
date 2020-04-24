@@ -36,6 +36,12 @@
           {{- end -}}
         </p>
         {{- end -}}
+
+        <!-- Add author tag -->
+        {{- if .Params.author -}}
+        {{- partial "author-tag.html" . -}}
+        {{- end -}}
+        
         {{- if or .Params.author .Params.publications -}}
         <p class="note date author">
           by&nbsp
@@ -51,16 +57,16 @@
             class="publication-meta"
             style="--highlight-color: {{- .Page.Params.color -}};"
             >
-          <img 
-            src="{{- .Page.Params.Favicon -}}"
-            alt="publication favicon"
-            class="publication-favicon"
-            />
+            <img 
+              src="{{- .Page.Params.Favicon -}}"
+              alt="publication favicon"
+              class="publication-favicon"
+              />
             {{- $articleParams.publications | plainify | safeHTML -}}
           </span>
-          {{- end -}}
-          {{- end -}}
-          {{- end -}}
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
         </p>
         {{- end -}}
         {{- $relURL := .RelPermalink -}}
