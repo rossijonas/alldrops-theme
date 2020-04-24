@@ -1,27 +1,38 @@
 +++
-title = "{{ replace .Name `-` ` ` | replaceRE `\d+ \d+ \d+_` `` | title }}"
-subtitle = ""
-author = {{ with .Site.Author.name }}"{{.}}"{{ else }} "" {{ end }}
+# Create new post with the `hugo new` command: 
+# `hugo new --kind post-bundle posts/<section>/<YY-MM-DD>_<post-name>`
+
 date = {{ .Date }}
 lastmod = {{ .Date }}
 
-description = ""
+title = "{{ replace .Name `-` ` ` | replaceRE `\d+ \d+ \d+_` `` | title }}"
 
-publications = "" 
+subtitle = ""
+
+# `author` field requires the ninckname of the author creating the
+# current page.
+author = {{ with .Site.Author.name }}"{{.}}"{{ else }} "" {{ end }}
+
+description = ""
 
 categories = []
 
 tags = []
 
-image = "/posts/{{ .Name }}/images/cover.png" # add arcticle cover image (compatible with medium-to-hugo tool)
+# `image` param defines the arcticle's cover image.
+{{ $dir := index (findRE "/posts/.*" .Dir) 0 }}
+image = "{{ $dir }}images/cover.png" 
 
-images = [] # all article images (compatible with medium-to-hugo tool)
+# All article images.
+images = []
 
-aliases = [] # article slug on medium (compatible with medium-to-hugo tool)
+# Article slug on medium.
+# (Compatible with medium-to-hugo tool.)
+aliases = []
 
 imgs = []
 
-readingTime = true  # show reading time after article date
+readingTime = true  # Show reading time after article date
 toc = true
 comments = false
 justify = false  # text-align: justify;
@@ -32,5 +43,5 @@ draft = true
 
 
 
-![image](/posts/{{ .Name }}/images/cover.png#layoutTextWidth)
+![image]({{ $dir }}images/cover.png#layoutTextWidth)
 
