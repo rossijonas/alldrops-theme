@@ -41,11 +41,11 @@
         <!-- Add author and section tags -->
         <div class="note-meta">
           {{- if .Params.author -}}
-          {{- partial "tag-author.html" . -}}
+          {{- partial "author-tag.html" . -}}
           {{- end -}}
-          &nbsp &bull; &nbsp
+          &nbsp &sol; &nbsp
           {{- if .Parent.Params.subsection -}}
-          {{- partial "tag-section.html" .Parent -}}
+          {{- partial "section-tag.html" .Parent -}}
           {{- end -}}
         </div>
 

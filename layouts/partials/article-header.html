@@ -10,27 +10,44 @@
   {{- if $lastmod -}}
   {{- $lastmodFormat = $lastmod.Format $dateFormat -}}
   {{- end -}}
-  {{- if .Date -}}
-  {{- $dateFormat := .Date.Format $dateFormat -}}
-  <p class="article date">{{- $dateFormat -}}
-    {{- if and ($lastmod.After .Date) (ne $lastmodFormat $dateFormat) -}}
-    <span class="lastmod">{{- printf (T "edited") $lastmodFormat -}}</span>
-    {{- end -}}
-    {{- if or (eq .Params.readingTime true) (and (not (eq .Params.readingTime false)) (eq site.Params.readingTime true)) -}}
-    <span class="reading-time">{{ T "readingTime" .ReadingTime }}</span>
-    {{- end -}}
-    {{- if .Params.author -}}
-    <p class="note date author">
-      by:&nbsp{{- .Params.author | plainify | safeHTML -}}
-    </p>
-    {{- end -}}
-    {{- if .IsTranslated -}}
-    <span class="langs">
-      {{- range .Translations -}}
-      <span class="lang"><a href="{{- .RelPermalink -}}">{{- .Lang -}}</a></span>
+
+  <div class="article-meta-container">
+
+    <!-- Add author tag -->
+    <div class="article-meta">
+      {{- if .Params.author -}}
+      {{- partial "author-tag.html" . -}}
       {{- end -}}
-    </span>
+    </div>
+
+    <!-- Add dates, reading time and translations -->
+    {{- if .Date -}}
+    {{- $dateFormat := .Date.Format $dateFormat -}}
+    <div class="article-meta">
+      <p class="article-date">{{- $dateFormat -}}
+        {{- if and ($lastmod.After .Date) (ne $lastmodFormat $dateFormat) -}}
+        <span class="lastmod">
+          {{- printf (T "edited") $lastmodFormat -}}
+        </span>
+        {{- end -}}
+        {{- if or (eq .Params.readingTime true) (and (not (eq .Params.readingTime false)) (eq site.Params.readingTime true)) -}}
+        <span class="reading-time">
+          {{ T "readingTime" .ReadingTime }}
+        </span>
+        {{- end -}}
+        {{- if .IsTranslated -}}
+        <span class="langs">
+          {{- range .Translations -}}
+          <span class="lang">
+            <a href="{{- .RelPermalink -}}">
+              {{- .Lang -}}
+            </a>
+          </span>
+          {{- end -}}
+        </span>
+        {{- end -}}
+      </p>
+    </div>
     {{- end -}}
-  </p>
-  {{- end -}}
+  </div>
 </section>

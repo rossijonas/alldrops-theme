@@ -1040,32 +1040,6 @@ section.article-author {
   margin: 0 auto; 
 }
 
-a.author-card {
- display: flex;
-}
-
-a.author-card:hover {
-  text-decoration: none;
-}
-
-div.author-card-avatar {
-  display: flex;
-  align-items: center;
-}
-
-div.author-card-content {
-  padding-left: 10px;
-}
-
-.author-card-content>p {
-  padding-top: 6px;
-}
-
-.author-summary {
-  color: var(--main-grey);
-  font-size: 0.8rem;
-}
-
 /* note-list.html */
 
 .note-meta {
@@ -1075,26 +1049,78 @@ div.author-card-content {
   color: var(--main-grey);
 }
 
-/* end */
-/* tag-author.html, tag-section.html */
+/* article-header.html */
 
-.tag-author-avatar,
-.tag-section-favicon {
-  max-width: 28px;
-  max-height: 28px;
+.article-meta-container {
+  margin-top: 28px;
 }
 
-.tag-author-avatar {
-  border-radius: 50%;
+.article-meta {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--main-grey);
+  margin-top: 10px;
 }
 
-/* end */
+.article-date {
+  font-size: 14px;
+}
 
-img.article.avatar {
+/* author-card.html */
+
+.author-card {
+  display: flex;
+  align-items: center;
+}
+
+.author-card:hover {
+  text-decoration: none;
+}
+
+.author-card-avatar {
+  display: flex;
+  align-items: center;
   max-width: 70px;
   max-height: 70px;
   border-radius: 50%;
 }
+
+.author-card-content {
+  padding-left: 10px;
+}
+
+.author-card-bio {
+  color: var(--main-grey);
+  font-size: 0.8rem;
+  padding-top: 6px;
+}
+
+/* author-tag.html, section-tag.html */
+
+.author-tag,
+.section-tag {
+  display: flex;
+  align-items: center;
+}
+
+.author-tag-avatar,
+.section-tag-favicon {
+  max-width: 28px;
+  max-height: 28px;
+  opacity: 0.9;
+}
+
+.author-tag-avatar {
+  border-radius: 50%;
+}
+
+.author-tag-name,
+.section-tag-name {
+  padding-left: 5px;
+}
+
+/* end */
 
 section.related {
   padding-top: 20px;
@@ -1144,7 +1170,7 @@ p.powerby>a:link {
 .about.title {
   font-size: 3rem;
 }
- 
+
 @media (max-width: 800px) {
   h1 {
     font-size: 26px;
@@ -1162,7 +1188,7 @@ p.powerby>a:link {
   .publication-header-container {
     display: block;
   }
-  
+
   section.article-author {
     max-width: 90%;
   }
