@@ -2,6 +2,10 @@
 # Create new posts's subsection with the `hugo new` command: 
 # `hugo new --kind post-subsection-bundle posts/<sub-section>`
 
+# | ! DO NOT CHANGE ! | 
+subsection = true
+# | ! DO NOT CHANGE (end) ! | 
+
 # Section name.
 name = "{{ replace .Name `-` ` ` }}"
 

@@ -1,11 +1,10 @@
-{{ $authorPage := .Site.GetPage (path.Join "/authors" . ) }}
-
-{{ $authorName := . }}
+{{ $authorPage := .Site.GetPage (path.Join "/authors" .Params.author) }}
+{{ $authorName := .Params.author }}
 
 {{- with $authorPage -}}
-<p class="note date author">
+<p class="tag-author">
   {{- with .Params.avatar -}}
-  <img src="{{ . }}" alt="avatar" class="avatar-tag"/>
+  <img src="{{ . }}" alt="avatar" class="tag-author-avatar"/>
   {{- end -}}
   <span>
     {{ with .Params.fullName }}{{ $authorName = . }}{{ end }}

@@ -1,0 +1,12 @@
+<p class="tag-section">
+  {{- with .Params.favicon -}}
+  <img src="{{ . }}" alt="favicon" class="tag-section-favicon"/>
+  {{- end -}}
+  <span
+  class="tag-section-name"
+  style="--highlight-color: {{- .Params.color -}};"
+  >
+    {{ .Params.name | plainify | safeHTML }}
+  </span>
+</p>
+

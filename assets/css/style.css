@@ -758,7 +758,7 @@ acronym {
   border-right: 1px dashed #e6e6e6;
 }
 
-/* alldrops.info - custom */
+/* alldrops.info - custom & overridden */
 
 :root {
   --main-grey: rgba(0,0,0,.54);
@@ -989,10 +989,6 @@ img.publication-favicon {
   margin-right: 5px;
 }
 
-.publication-meta {
-  border-bottom: 1px solid var(--highlight-color, var(--highlight-grey));
-}
-
 .publication-header-link:hover {
   text-decoration: none;
 }
@@ -1069,6 +1065,30 @@ div.author-card-content {
   color: var(--main-grey);
   font-size: 0.8rem;
 }
+
+/* note-list.html */
+
+.note-meta {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--main-grey);
+}
+
+/* end */
+/* tag-author.html, tag-section.html */
+
+.tag-author-avatar,
+.tag-section-favicon {
+  max-width: 28px;
+  max-height: 28px;
+}
+
+.tag-author-avatar {
+  border-radius: 50%;
+}
+
+/* end */
 
 img.article.avatar {
   max-width: 70px;

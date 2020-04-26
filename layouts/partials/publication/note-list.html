@@ -33,26 +33,15 @@
           {{- end -}}
         </p>
         {{- end -}}
-        {{- if .Params.author -}}
-        <p class="note date author">
-          by&nbsp
-          <span>
-            {{- .Params.author | plainify | safeHTML -}}
-          </span>
-        </p>
-        {{- end -}}
+
+        <!-- Add author tag -->
+        <div class="note-meta">
+          {{- if .Params.author -}}
+          {{- partial "tag-author.html" . -}}
+          {{- end -}}
+        </div>
+
         {{- $relURL := .RelPermalink -}}
-        {{- $imgs := .Params.imgs -}}
-        {{- with .Params.imgs -}}
-        <span class="note imgs">{{- $imgCount := len $imgs -}}
-          {{- range $imgs -}}
-          {{- $imgurl := lower . -}}
-          {{- if and (not (hasPrefix $imgurl "http://")) (not (hasPrefix $imgurl "https://")) -}}
-          {{- $imgurl = path.Join $relURL . -}}
-          {{- end -}}
-          <img class="img" src="{{- $imgurl -}}" alt />
-          {{- end -}}
-        </span>{{- end -}}
       </div>
     </a>
   </li>

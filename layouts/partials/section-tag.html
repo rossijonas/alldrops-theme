@@ -1,0 +1,20 @@
+{{- if .Params.publications -}}
+          &nbspat&nbsp
+          {{ $articleParams := .Params }}
+          {{- range where .Site.Pages "Type" "publications" -}}
+          {{- if eq .Page.Name $articleParams.publications -}}
+          <span
+            class="publication-meta"
+            style="--highlight-color: {{- .Page.Params.color -}};"
+            >
+            <img 
+              src="{{- .Page.Params.Favicon -}}"
+              alt="publication favicon"
+              class="publication-favicon"
+              />
+            {{- $articleParams.publications | plainify | safeHTML -}}
+          </span>
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
+
