@@ -388,11 +388,6 @@ acronym {
   margin-bottom: 24px;
 }
 
-.article.date {
-  color: rgba(0,0,0,.5);
-  margin-top: 24px;
-}
-
 .tag,
 .category {
   display: inline-block;
@@ -871,19 +866,6 @@ a.category {
   color: black;
 }
 
-.nav.publications-navbar {
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
-
-.nav.publications-navbar-item {
-  text-transform: uppercase;
-  font-size: .8rem;
-  color: var(--main-grey);
-}
-
 h2.article.subtitle,
 .publication.subtitle,
 .about.subtitle {
@@ -1040,6 +1022,11 @@ section.article-author {
   margin: 0 auto; 
 }
 
+/*
+ * FOLDER: layout/partials/
+ *
+ */
+
 /* note-list.html */
 
 .note-meta {
@@ -1118,6 +1105,34 @@ section.article-author {
 .author-tag-name,
 .section-tag-name {
   padding-left: 5px;
+}
+
+
+/* subsections-navbar.html */
+
+.subsections-navbar {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.subsections-navbar-item {
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 4px 6px;
+  margin: 5px 5px 5px 0;
+}
+
+.subsections-navbar-item:link {
+  color: var(--main-grey); 
+}
+
+.subsections-navbar-item:hover {
+  text-decoration: none;
+  color: black;
 }
 
 /* end */
