@@ -15,9 +15,9 @@
   {{- end -}}
   <div class="publication-header-description">
     <h1 class="publication title">
-      {{- $title -}}
+      {{- .Params.name -}}
     </h1>
-    {{- with .Params.subtitle -}}
+    {{- with .Params.slogan -}}
     <div class="publication slogan">
       <span class="publication subtitle">
         {{- . | safeHTML -}}

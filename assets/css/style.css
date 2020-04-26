@@ -341,10 +341,6 @@ acronym {
   font-weight: 700;
 }
 
-.note.date {
-  color: rgba(0,0,0,.5);
-}
-
 .note.content {
   font-size: 15px;
 }
@@ -355,7 +351,6 @@ acronym {
 }
 
 .note.title,
-.note.date,
 .note.content,
 .note.imgs,
 .note.labels {
@@ -1034,6 +1029,7 @@ section.article-author {
   align-items: center;
   font-size: 13px;
   color: var(--main-grey);
+  margin: 5px 0;
 }
 
 /* article-header.html */
@@ -1106,7 +1102,6 @@ section.article-author {
 .section-tag-name {
   padding-left: 5px;
 }
-
 
 /* subsections-navbar.html */
 

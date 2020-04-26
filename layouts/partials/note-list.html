@@ -1,4 +1,5 @@
 {{- $paginator := . -}}
+{{- $isHome := eq (string .URL) "/" -}}
 
 {{- if gt $paginator.TotalPages 0 -}}
 {{- $dateFormat := site.Params.dateFormat -}}
@@ -27,30 +28,33 @@
           {{- .Params.subtitle | safeHTML -}}
         </p>
         {{- end -}}
+
+        <!-- Add date/reading time -->
         {{- if .Date -}}
-        <p class="note date">
+        <p class="note-meta">
           {{- .Date.Format $dateFormat -}}
-          &nbsp &bull; &nbsp
           {{- if .ReadingTime -}}
+          &nbsp &bull; &nbsp
           {{- .ReadingTime -}}&nbsp min read
           {{- end -}}
         </p>
         {{- end -}}
 
-
-        <!-- Add author and section tags -->
+        <!-- Add author tag -->
         <div class="note-meta">
           {{- if .Params.author -}}
           {{- partial "author-tag.html" . -}}
           {{- end -}}
+
+          <!-- At home page, add subsection tag -->
+          {{- if and .Parent.Params.subsection $isHome -}}
           &nbsp &sol; &nbsp
-          {{- if .Parent.Params.subsection -}}
           {{- partial "section-tag.html" .Parent -}}
           {{- end -}}
-        </div>
 
-        {{- $relURL := .RelPermalink -}}
+        </div>
       </div>
+      {{- $relURL := .RelPermalink -}}
     </a>
   </li>
   {{- end -}}
