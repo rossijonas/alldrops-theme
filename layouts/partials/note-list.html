@@ -4,7 +4,7 @@
 {{- if gt $paginator.TotalPages 0 -}}
 {{- $dateFormat := site.Params.dateFormat -}}
 {{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
-<ul class="note list">
+<ul class="note list note-list">
   {{- range $key, $value :=  $paginator.Pages -}}
   {{- $featured := "" -}}
   {{- $pages := "" -}}
