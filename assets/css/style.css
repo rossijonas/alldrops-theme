@@ -675,11 +675,12 @@ acronym {
 /* alldrops.info - custom & overridden */
 
 :root {
-  --main-grey: rgba(0,0,0,.54);
-  --light-grey: rgba(0,0,0,.40);
-  --lightest-grey: rgba(0,0,0,.10);
-  --highlight-grey: rgba(0,0,0,.24);
-  --dark-grey: rgba(0,0,0,.70);
+  --light-white: rgba(255,255,255,0.95);
+  --main-grey: rgba(0,0,0,0.54);
+  --light-grey: rgba(0,0,0,0.40);
+  --lightest-grey: rgba(0,0,0,0.10);
+  --highlight-grey: rgba(0,0,0,0.24);
+  --dark-grey: rgba(0,0,0,0.70);
 }
 
 body {
@@ -703,7 +704,7 @@ a, a:link {
 }
 
 .label {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--main-grey);
   font-style: italic;
 }
@@ -713,7 +714,7 @@ a.category {
   color: var(--main-grey);
   text-decoration: initial:
   background-color: white;
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0,0,0,0.05);
   border: none;
   border-radius: 2px;
   padding: 7px;
@@ -861,7 +862,7 @@ section.article-author {
   }
 
   .site.name {
-    color: rgba(0,0,0,.85);
+    color: rgba(0,0,0,0.85);
   }
 
   .site.slogan {
@@ -874,7 +875,7 @@ section.article-author {
   .site.slogan .title {
     display: inline-block;
     text-align: initial;
-    color: rgba(0,0,0,.5);
+    color: rgba(0,0,0,0.5);
     min-height: 22px;
   }
 
@@ -898,7 +899,7 @@ section.article-author {
   }
 
   .nav-item:hover {
-    opacity: .5;
+    opacity: 0.5;
     text-decoration: none;
   }
 
@@ -954,13 +955,13 @@ section.article-author {
 
   .publication-header-logo.header-reduced {
     border-left: 1px solid var(--highlight-color, var(--lightest-grey));
-    height:32px;
+    height: 32px;
     padding-left: 15px;
     margin-left: 15px;
   }
 
   .publication-header-logo.header-reduced>img {
-    height:32px;
+    height: 32px;
   }
 
   @media (max-width: 800px) {
@@ -971,7 +972,7 @@ section.article-author {
 
     .nav-toggle-collapse {
       display: block; 
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 700;
     }
 
@@ -981,19 +982,31 @@ section.article-author {
     }
 
     .nav-item {
-      font-size: 22px;
+      font-size: 24px;
     }
 
     label.nav-toggle-collapse {
       transition: transform 0.3s ease-in-out;
+      -moz-transition: transform 0.3s ease-in-out;
+      -webkit-transition: transform 0.3s ease-in-out;
     }
 
     input#nav-toggle-collapse:checked ~ label {
       transform: rotate(45deg);
+      font-size: 42px;
     }
 
     input#nav-toggle-collapse:checked ~ .nav {
       display: flex;
+      position: absolute;
+      top: 2%;
+      width: 70%;
+      padding: 15px;
+      margin: 10px 7% auto auto;
+      background: var(--light-white);
+      -moz-box-shadow:    3px 3px 5px 6px #ccc;
+      -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+      box-shadow:         3px 3px 9px 4px rgba(0,0,0,0.1);
     }
   }
 
