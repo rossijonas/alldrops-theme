@@ -892,7 +892,7 @@ section.article-author {
 
   .nav-item {
     opacity: 1;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1;
     padding: 4px 6px;
     margin: 5px 5px 5px 0;
@@ -926,7 +926,6 @@ section.article-author {
   }
 
   div.header.wrap.header-reduced {
-    /*border-bottom: 1px solid var(--lightest-grey);*/
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -965,6 +964,7 @@ section.article-author {
   }
 
   @media (max-width: 800px) {
+    /* Collapsable nav */
     .nav-wrap {
       flex-direction: column;
       align-items: flex-end;
@@ -1004,8 +1004,8 @@ section.article-author {
       padding: 15px;
       margin: 10px 7% auto auto;
       background: var(--light-white);
-      -moz-box-shadow:    3px 3px 5px 6px #ccc;
-      -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+      -moz-box-shadow:    3px 3px 9px 4px rgba(0,0,0,0.1);
+      -webkit-box-shadow: 3px 3px 9px 4px rgba(0,0,0,0.1);
       box-shadow:         3px 3px 9px 4px rgba(0,0,0,0.1);
     }
   }
