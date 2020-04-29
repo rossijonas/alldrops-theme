@@ -1,16 +1,17 @@
 <section id="header" class="site-header">
   <div class="header-wrap">
 
-    <span class="header left-side">
+    <span class="header-left-side">
       <a class="site-home" href="{{- `/` | relLangURL -}}">
         <!-- Add logo -->
         {{- if isset .Site.Params "logo" -}}
-        <img class="site-logo" src="{{- .Site.Params.logo | relURL -}}" alt />
+        <img class="site-logo" src="{{- .Site.Params.logo | relURL -}}"
+          alt="site logo" />
         {{- end -}}
         <!-- Add slogan -->
         {{- with site.Params.slogan -}}
         <div class="site-slogan">
-          <span class="title">
+          <span>
             {{- . | safeHTML -}}
           </span>
         </div>
@@ -24,7 +25,7 @@
       </a>
     </span>
 
-    <span class="header right-side">
+    <span class="header-right-side">
       {{- partial "navigation-items.html" site.Params.nav -}}
     </span>
   </div>

@@ -617,11 +617,6 @@ acronym {
     font-size: 15px;
   }
 
-  .header.left-side,
-  .header.right-side {
-    font-size: 15px;
-  }
-
   .base-body {
     padding-left: 15px;
     padding-right: 15px;
@@ -841,7 +836,7 @@ section.article-author {
     font-size: 1px;
   }
 
-    .site-home {
+  .site-home {
     display: flex;
     flex-wrap: wrap;
   }
@@ -993,6 +988,13 @@ section.article-author {
       -moz-box-shadow:    3px 3px 9px 4px rgba(0,0,0,0.1);
       -webkit-box-shadow: 3px 3px 9px 4px rgba(0,0,0,0.1);
       box-shadow:         3px 3px 9px 4px rgba(0,0,0,0.1);
+    }
+  }
+
+  @media (max-width: 375px) {
+    .header-left-side,
+    .header-right-side {
+      font-size: 15px;
     }
   }
 

@@ -1,5 +1,5 @@
 {{- $paginator := . -}}
-{{- $isHome := eq (string .URL) "/" -}}
+{{- $isHome := or (eq (string .URL) "/") (hasPrefix (string .URL) "/page/" ) -}}
 
 {{- if gt $paginator.TotalPages 0 -}}
 {{- $dateFormat := site.Params.dateFormat -}}
