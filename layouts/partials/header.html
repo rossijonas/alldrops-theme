@@ -5,7 +5,7 @@
       <a class="site home" href="{{- `/` | relLangURL -}}">
         <!-- Add logo -->
         {{- if isset .Site.Params "logo" -}}
-        <img class="site logo" src="{{- .Site.Params.logo | relURL -}}" alt />
+        <img class="site-logo" src="{{- .Site.Params.logo | relURL -}}" alt />
         {{- end -}}
         <!-- Add slogan -->
         {{- with site.Params.slogan -}}
@@ -17,7 +17,7 @@
         {{- end -}}
         <!-- Add site title -->
         {{- if isset .Site.Params "showTitle" -}}
-        <span class="site name">
+        <span class="site-name">
           {{- site.Title | safeHTML -}}
         </span>
         {{- end -}}

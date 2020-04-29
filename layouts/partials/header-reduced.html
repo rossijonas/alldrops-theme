@@ -3,21 +3,6 @@
 {{- $title = .Title -}}
 {{- end -}}
 
-{{- $highlightColor := "" -}} 
-{{- $pubLogo := "" -}}
-{{- $pubLink := "" -}}
-<!-- Get publication highlight color and publication logo-->
-{{- if .Params.publications  -}}
-{{- $publication := .Params.publications -}}
-{{- range .Site.Pages -}}
-{{- if eq .Page.Name $publication -}}
-{{- $highlightColor = .Page.Params.color -}}
-{{- $pubLogo = .Page.Params.logo -}}
-{{- $pubLink = .Page.RelPermalink -}}
-{{- end -}}
-{{- end -}}
-{{- end -}}
-
 <section id="header" class="site-header">
   <div class="header-wrap header-reduced">
     <span class="header left-side header-reduced">
@@ -28,32 +13,34 @@
         <img class="site-favicon" src="{{- $favicon | relURL -}}" alt />
         {{- end -}}
         {{- if $showTitle -}}
-        <span class="site name header-reduced">
+        <span class="site-name header-reduced">
           {{- site.Title | safeHTML -}}
         </span>
         {{- end -}}
       </a>
-      {{- if ne .Type "publications" -}}
-      <a class="site home" href="{{- $pubLink -}}">
-        {{- if $pubLogo -}}
+
+      {{- if .Parent.Params.subsection -}}
+      <a class="site home" href="{{- .Parent.RelPermalink -}}">
+        {{- if .Parent.Params.logo -}}
         <div
           class="publication-header-logo header-reduced"
-          style="--highlight-color: {{- $highlightColor -}};"
+          style="--highlight-color: {{- .Parent.Params.color -}};"
           >
           <img
-            src="{{- $pubLogo -}}"
-            alt="{{- .Params.publications -}}"
+            src="{{- .Parent.Params.logo -}}"
+            alt="{{- .Parent.Params.name -}}"
             />
         </div>
         {{- else -}}
         <div class="publication-header-description">
           <h1 class="publication title header-reduced">
-            {{- .Params.publications -}}
+            {{- .Parent.Params.name -}}
           </h1>
         </div>
         {{- end -}}
       </a>
       {{- end -}}
+    
     </span>
     <span class="header right-side">
       {{- partial "navigation-items.html" site.Params.nav -}}

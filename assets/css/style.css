@@ -259,8 +259,7 @@ acronym {
   text-decoration: none;
 }
 
-.note.title,
-.site.name {
+.note.title {
   font-size: 17px;
   font-weight: 700;
 }
@@ -854,14 +853,16 @@ section.article-author {
     text-decoration: none;
   }
 
-  .site.logo {
+  .site-logo {
     height: 42px;
     border-radius: 3px;
     vertical-align: middle;
     margin-right: 8px;
   }
 
-  .site.name {
+  .site-name {
+    font-size: 17px;
+    font-weight: 700;
     color: rgba(0,0,0,0.85);
   }
 
