@@ -841,43 +841,40 @@ section.article-author {
     font-size: 1px;
   }
 
-  .header.left-side,
-  .header.right-side {
-    display: inline-block;
-    font-size: 17px;
-    text-align: initial;
+    .site-home {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .site.home:hover {
+  .site-home:hover {
     opacity: 0.5;
     text-decoration: none;
   }
 
   .site-logo {
-    height: 42px;
     border-radius: 3px;
-    vertical-align: middle;
     margin-right: 8px;
+    padding-right: 20px;
+    max-height: 42px;
+    width: auto;
   }
 
   .site-name {
-    font-size: 17px;
+    font-size: 40px;
     font-weight: 700;
+    line-height: 0.8px;
     color: rgba(0,0,0,0.85);
   }
 
-  .site.slogan {
-    font-size: 15px;
-    line-height: 1.5;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .site.slogan .title {
-    display: inline-block;
-    text-align: initial;
-    color: rgba(0,0,0,0.5);
+  .site-slogan {
+    display: block;
+    margin-top: 10px;
     min-height: 22px;
+    color: var(--light-grey);
+    font-size: 15px;
+    letter-spacing: 1.7px;
+    line-height: 1.5;
+    text-align: left;
   }
 
   .nav-wrap,
@@ -897,6 +894,9 @@ section.article-author {
     line-height: 1;
     padding: 4px 6px;
     margin: 5px 5px 5px 0;
+    word-break: unset;
+    word-wrap: none;
+    -moz-hyphens: none;
   }
 
   .nav-item:hover {
@@ -914,11 +914,6 @@ section.article-author {
 
   .site-favicon {
     height: 32px;
-  }
-
-  .site.name {
-    font-size: 40px;
-    line-height: 0.8px;
   }
 
   .site.name.header-reduced {
@@ -940,17 +935,6 @@ section.article-author {
   span.header.left-side.header-reduced {
     padding-right: 10px;
     display: flex;
-  }
-
-  .site.slogan {
-    margin-top:5px;
-    text-align: left;
-  }
-
-  .site.slogan>.title {
-    margin-top: 10px;
-    color: var(--light-grey);
-    letter-spacing: 1.7px;
   }
 
   .publication-header-logo.header-reduced {

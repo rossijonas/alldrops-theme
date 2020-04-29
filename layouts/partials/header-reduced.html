@@ -6,7 +6,7 @@
 <section id="header" class="site-header">
   <div class="header-wrap header-reduced">
     <span class="header left-side header-reduced">
-      <a class="site home" href="{{- `/` | relLangURL -}}">
+      <a class="site-home" href="{{- `/` | relLangURL -}}">
         {{- $favicon := site.Params.favicon -}}
         {{- $showTitle := site.Params.showTitle -}}
         {{- if $favicon -}}
@@ -20,7 +20,7 @@
       </a>
 
       {{- if .Parent.Params.subsection -}}
-      <a class="site home" href="{{- .Parent.RelPermalink -}}">
+      <a class="site-home" href="{{- .Parent.RelPermalink -}}">
         {{- if .Parent.Params.logo -}}
         <div
           class="publication-header-logo header-reduced"
