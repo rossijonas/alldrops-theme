@@ -754,11 +754,11 @@ h2.article.subtitle,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 25px 0 25px 0;
+  align-items: center;
+  margin-bottom: 25px;
   padding: 45px 0 45px 0;
   min-height: 150px;
   border-bottom: 1px solid var(--lightest-grey);
-  border-top: 1px solid var(--lightest-grey);
 }
 
 .publication-header-link,
@@ -840,6 +840,9 @@ section.article-author {
     padding-right: 12%;
   }
 
+  .header-right-side {
+  }
+
   .site-home {
     display: flex;
     flex-wrap: wrap;
@@ -894,6 +897,7 @@ section.article-author {
   .nav-item {
     opacity: 1;
     font-size: 16px;
+    font-weight: 700;
     line-height: 1;
     padding: 4px 6px;
     margin: 5px 5px 5px 0;
@@ -919,16 +923,25 @@ section.article-author {
     height: 32px;
   }
 
+  .site-header-reduced {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 54px;
+    border-bottom: 1px solid var(--lightest-grey);
+  }
+
   .header-reduced-wrap {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-   .header-reduced-left-side{
+  .header-reduced-left-side{
     display: flex;
     align-items: center;
-    padding-right: 12%;
+    padding-right: 2%;
   }
 
   .header-reduced-site-name {
@@ -937,8 +950,9 @@ section.article-author {
   }
 
   .header-reduced-subsection {
+    display: flex;
+    align-items: center;
     border-left: 1px solid var(--highlight-color, var(--lightest-grey));
-    height: 32px;
     padding-left: 15px;
     margin-left: 15px;
   }
@@ -948,6 +962,13 @@ section.article-author {
     max-height: 42px;
     width: auto;
     height: 32px;
+  }
+
+  .header-reduced-subsection-name {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(0,0,0,0.85);
   }
 
   @media (max-width: 800px) {

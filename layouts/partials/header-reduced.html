@@ -3,7 +3,7 @@
 {{- $title = .Title -}}
 {{- end -}}
 
-<section id="header" class="site-header">
+<section id="header" class="site-header-reduced">
   <div class="header-reduced-wrap">
     <span class="header-reduced-left-side">
       <a class="site-home" href="{{- `/` | relLangURL -}}">
@@ -20,7 +20,7 @@
         {{- end -}}
       </a>
 
-      {{- if .Parent.Params.subsection -}}
+      {{- if or .Parent.Params.subsection -}}
       <a class="site-home" href="{{- .Parent.RelPermalink -}}">
         <div
           class="header-reduced-subsection"
@@ -33,25 +33,16 @@
             alt="{{- .Parent.Params.name -}}"
             />
           {{- else -}}
-          <span class="header-reduced-site-name">
+          <span class="header-reduced-subsection-name">
             {{- .Parent.Params.name | safeHTML -}}
           </span>
-
+          {{- end -}}
         </div>
-
-        <!-- LEGACY
-        <div class="publication-header-description">
-          <h1 class="publication title header-reduced">
-            {{- .Parent.Params.name -}}
-          </h1>
-        </div>
-        -->
-        {{- end -}}
       </a>
       {{- end -}}
-
     </span>
-    <span class="header right-side">
+
+    <span class="header-right-side">
       {{- partial "navigation-items.html" site.Params.nav -}}
     </span>
   </div>
