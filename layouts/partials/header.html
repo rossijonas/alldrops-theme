@@ -3,10 +3,17 @@
 
     <span class="header-left-side">
       <a class="site-home" href="{{- `/` | relLangURL -}}">
-        <!-- Add logo -->
-        {{- if isset .Site.Params "logo" -}}
-        <img class="site-logo" src="{{- .Site.Params.logo | relURL -}}"
-          alt="site logo" />
+        <!-- Add logo or site title -->
+        {{- if .Site.Params.logo -}}
+        <img
+          class="site-logo"
+          src="{{- .Site.Params.logo | relURL -}}"
+          alt="site logo"
+          />
+        {{- else -}}
+        <span class="site-name">
+          {{- .Site.Title | safeHTML -}}
+        </span>
         {{- end -}}
         <!-- Add slogan -->
         {{- with site.Params.slogan -}}
@@ -15,12 +22,6 @@
             {{- . | safeHTML -}}
           </span>
         </div>
-        {{- end -}}
-        <!-- Add site title -->
-        {{- if isset .Site.Params "showTitle" -}}
-        <span class="site-name">
-          {{- site.Title | safeHTML -}}
-        </span>
         {{- end -}}
       </a>
     </span>

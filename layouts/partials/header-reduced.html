@@ -4,43 +4,52 @@
 {{- end -}}
 
 <section id="header" class="site-header">
-  <div class="header-wrap header-reduced">
-    <span class="header left-side header-reduced">
+  <div class="header-reduced-wrap">
+    <span class="header-reduced-left-side">
       <a class="site-home" href="{{- `/` | relLangURL -}}">
-        {{- $favicon := site.Params.favicon -}}
-        {{- $showTitle := site.Params.showTitle -}}
-        {{- if $favicon -}}
-        <img class="site-favicon" src="{{- $favicon | relURL -}}" alt />
-        {{- end -}}
-        {{- if $showTitle -}}
-        <span class="site-name header-reduced">
-          {{- site.Title | safeHTML -}}
+        {{- if .Site.Params.favicon -}}
+        <img
+          class="site-favicon"
+          src="{{- .Site.Params.favicon | relURL -}}"
+          alt="{{- .Site.Title -}}"
+          />
+        {{- else -}}
+        <span class="header-reduced-site-name">
+          {{- .Site.Title | safeHTML -}}
         </span>
         {{- end -}}
       </a>
 
       {{- if .Parent.Params.subsection -}}
       <a class="site-home" href="{{- .Parent.RelPermalink -}}">
-        {{- if .Parent.Params.logo -}}
         <div
-          class="publication-header-logo header-reduced"
+          class="header-reduced-subsection"
           style="--highlight-color: {{- .Parent.Params.color -}};"
           >
+          {{- if .Parent.Params.logo -}}
           <img
-            src="{{- .Parent.Params.logo -}}"
+            class="header-reduced-subsection-logo"
+            src="{{- .Parent.Params.logo | relURL -}}"
             alt="{{- .Parent.Params.name -}}"
             />
+          {{- else -}}
+          <span class="header-reduced-site-name">
+            {{- .Parent.Params.name | safeHTML -}}
+          </span>
+
         </div>
-        {{- else -}}
+
+        <!-- LEGACY
         <div class="publication-header-description">
           <h1 class="publication title header-reduced">
             {{- .Parent.Params.name -}}
           </h1>
         </div>
+        -->
         {{- end -}}
       </a>
       {{- end -}}
-    
+
     </span>
     <span class="header right-side">
       {{- partial "navigation-items.html" site.Params.nav -}}
