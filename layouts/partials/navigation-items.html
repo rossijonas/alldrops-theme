@@ -22,7 +22,7 @@
       target="_blank"
       {{- end -}}
       >
-      {{- .title -}}
+      {{- .title | safeHTML | upper -}}
     </a>
     {{- end -}}
   </nav>

@@ -896,8 +896,7 @@ section.article-author {
 
   .nav-item {
     opacity: 1;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
     line-height: 1;
     padding: 4px 6px;
     margin: 5px 5px 5px 0;
@@ -921,6 +920,7 @@ section.article-author {
 
   .site-favicon {
     height: 32px;
+    opacity: 0.88;
   }
 
   .site-header-reduced {
@@ -1186,7 +1186,6 @@ section.article-author {
   .subsections-navbar-item {
     display: inline-block;
     font-size: 14px;
-    text-transform: uppercase;
     line-height: 1;
     padding: 4px 6px;
     margin: 5px 5px 5px 0;

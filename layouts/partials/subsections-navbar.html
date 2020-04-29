@@ -7,7 +7,7 @@
     <a
       class="subsections-navbar-item"
       href="{{- .Permalink -}}">
-      {{- .Params.Name | safeHTML -}}
+      {{- .Params.Name | safeHTML | upper -}}
     </a>
     {{- end -}}
   </nav>
