@@ -1,0 +1,11 @@
+{{- define "main" -}}
+
+{{- $justify := false -}}
+{{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
+<h1>
+    Hello from authors/index.html
+  </h1>
+
+<!-- Add author info, and a list of posts published by this author -->
+
+{{- end -}}

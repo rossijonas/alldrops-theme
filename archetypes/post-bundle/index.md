@@ -12,6 +12,7 @@ subtitle = ""
 # `author` field requires the ninckname of the author creating the
 # current page.
 author = {{ with .Site.Author.name }}"{{.}}"{{ else }} "" {{ end }}
+authors = [{{ with .Site.Author.name }}"{{.}}"{{ else }} "" {{ end }}]
 
 description = ""
 
