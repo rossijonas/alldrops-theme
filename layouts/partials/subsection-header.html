@@ -1,0 +1,25 @@
+{{- $title := T .Title -}}
+{{- if not $title -}}
+{{- $title = .Title -}}
+{{- end -}}
+
+<section
+  class="subsection-header"
+  style="--highlight-color: {{- .Params.color -}};">
+    {{- if .Params.logo -}}
+    <img
+      class="subsection-header-logo"  
+      src="{{- .Params.logo -}}"
+      alt="{{- $title -}}"/>
+    {{- end -}}
+    <div class="subsection-header-description">
+      <h1 class="subsection-header-title">
+        {{- .Params.name | safeHTML -}}
+      </h1>
+  {{- with .Params.slogan -}}
+    <span class="subsection-header-subtitle">
+      {{- . | safeHTML -}}
+    </span>
+  {{- end -}}
+</section>
+
