@@ -1,0 +1,13 @@
+{{- $paginator := . -}}
+
+{{- $dateFormat := site.Params.dateFormat -}}
+{{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
+
+<!-- Add author tag -->
+<div class="note-meta">
+  {{- if .Params.author -}}
+  {{- partial "author-tag.html" . -}}
+  {{- end -}}
+
+</div>
+
