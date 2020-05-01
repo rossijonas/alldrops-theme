@@ -1,13 +1,56 @@
-
 {{- define "main" -}}
 
-{{- $justify := false -}}
-{{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
+{{- $page := .Page -}}
 
-<h1>
-  Hello from author/list.html
-</h1>
+{{- $authors := .Pages.ByParam "nickname"  -}}
+{{- range $authors -}}
+{{- $posts := len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname) -}}
+iuse merge function
+iuse merge function
+{{- dict postCount $posts -}}
+{{- end -}}
 
-{{- partial "author-list.html" . -}}
-i
+{{- $orderBy := slice "name" -}}
+
+<section id="authors">
+  <div class="authors-header">
+    <h1>{{- title .Path -}}</h1>
+  </div>
+
+  <!-- "Order by" menu -->
+  <div class="authors-menu-container">
+    <p>order by:</p>
+    <ul class="authors-menu">
+      {{- range $orderBy -}}
+      <li class="authors-menu-item">
+        <a class="authors-menu-link"
+           href="{{- $page.RelPermalink -}}">
+          {{- upper . -}}
+        </a>
+      </li>
+      {{- end -}}
+    </ul>
+  </div>
+
+  <ul class="authors-list">
+    {{- range $authors -}} 
+
+    {{- $postCount := len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname) -}}
+
+    <li>
+      <a class="authors-list-item"
+         href="{{- .RelPermalink -}}">
+        <img class="authors-list-item-avatar"
+             src="{{- .Params.avatar  -}}"
+             alt="author avatar"/>
+        <h3>{{- .Params.fullName -}}</h3>
+        <p class="authors-list-item-meta">Posts: {{ $postCount }}</p>
+        <p class="authors-list-item-meta">{{- .Params.bio -}}</p>
+      </a>
+    </li>
+    {{- end -}}
+  </ul>
+
+</section>
+
 {{- end -}}
