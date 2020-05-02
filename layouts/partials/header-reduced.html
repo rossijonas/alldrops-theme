@@ -24,7 +24,7 @@
       <a class="site-home" href="{{- .Parent.RelPermalink -}}">
         <div
           class="header-reduced-subsection"
-          style="--highlight-color: {{- .Parent.Params.color -}};"
+          style="--highlight-color: {{- .Parent.Params.color | safeCSS -}};"
           >
           {{- if .Parent.Params.logo -}}
           <img

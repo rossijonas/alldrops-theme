@@ -5,7 +5,7 @@
 
 <section
   class="subsection-header"
-  style="--highlight-color: {{- .Params.color -}};">
+  style="--highlight-color: {{- .Params.color | safeCSS -}};">
     {{- if .Params.logo -}}
     <img
       class="subsection-header-logo"  

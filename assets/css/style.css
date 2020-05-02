@@ -859,6 +859,15 @@ section.article-author {
     padding-top: 8px;
   }
 
+  .authors-footer {
+    color: var(--main-grey);
+    font-size: 15px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.75;
+    margin-top: 65px;
+  }
+
   /*
    * FOLDER: layout/partials/
    *
@@ -970,7 +979,7 @@ section.article-author {
 
   .site-header-reduced {
     margin-top: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     min-height: 54px;

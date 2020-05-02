@@ -1,25 +1,29 @@
 {{- define "main" -}}
 
 {{- $page := .Page -}}
+{{- $orderBy := slice "name" "posts" -}}
 
+<!-- Order alphabetically -->
 {{- $authors := .Pages.ByParam "nickname"  -}}
+
+<!-- Add postCount property for each author -->
 {{- range $authors -}}
-{{- $posts := len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname) -}}
-iuse merge function
-iuse merge function
-{{- dict postCount $posts -}}
+{{- .Scratch.Set "postCount" (len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname)) -}}
 {{- end -}}
 
-{{- $orderBy := slice "name" -}}
+<!-- Order by postCount winners -->
+{{- $authors := (.Pages.ByParam "postCount").Reverse -}}
+
 
 <section id="authors">
   <div class="authors-header">
-    <h1>{{- title .Path -}}</h1>
+    <h1>{{- title .Title -}}</h1>
   </div>
 
-  <!-- "Order by" menu -->
+  <!-- "Sort by" menu -->
+  <!-- ...not working yet
   <div class="authors-menu-container">
-    <p>order by:</p>
+    <p>sort by:</p>
     <ul class="authors-menu">
       {{- range $orderBy -}}
       <li class="authors-menu-item">
@@ -31,12 +35,10 @@ iuse merge function
       {{- end -}}
     </ul>
   </div>
+  -->
 
   <ul class="authors-list">
     {{- range $authors -}} 
-
-    {{- $postCount := len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname) -}}
-
     <li>
       <a class="authors-list-item"
          href="{{- .RelPermalink -}}">
@@ -44,12 +46,16 @@ iuse merge function
              src="{{- .Params.avatar  -}}"
              alt="author avatar"/>
         <h3>{{- .Params.fullName -}}</h3>
-        <p class="authors-list-item-meta">Posts: {{ $postCount }}</p>
+        <p class="authors-list-item-meta">
+          Posts: {{ .Scratch.Get "postCount" }}
+        </p>
         <p class="authors-list-item-meta">{{- .Params.bio -}}</p>
       </a>
     </li>
     {{- end -}}
   </ul>
+
+  <p class="authors-footer">If you align with the <a href="/about/all-drops">values described at our about page</a> and feels like collaborating here, please <a href="/contact/all-drops">contact us!</a></p>
 
 </section>
 

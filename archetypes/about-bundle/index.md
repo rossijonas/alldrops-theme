@@ -16,7 +16,7 @@ showName = false
 # current page.
 # 
 # It is used to define the site owner or the section owner.
-author = {{ with .Site.Author.name }}"{{.}}"{{ else }} "" {{ end }}
+author = {{ .Site.Author.name | default "" }}
 
 draft = true
 
