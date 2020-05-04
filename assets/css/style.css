@@ -824,7 +824,7 @@ section.article-author {
     color: var(--main-grey); 
   }
 
-   .authors-menu-link:hover {
+  .authors-menu-link:hover {
     text-decoration: none;
     color: black;
   }
@@ -866,6 +866,22 @@ section.article-author {
     font-style: italic;
     opacity: 0.75;
     margin-top: 65px;
+  }
+
+  @media (max-width: 900px) {
+    .authors-list {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 20% 20% 20% 20% 20%;
+      margin-top: 45px;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 375px) {
+      .authors-list {
+        display: block;
+      } 
+    }
   }
 
   /*

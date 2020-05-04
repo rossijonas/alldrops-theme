@@ -3,16 +3,13 @@
 {{- $page := .Page -}}
 {{- $orderBy := slice "name" "posts" -}}
 
-<!-- Order alphabetically -->
-{{- $authors := .Pages.ByParam "nickname"  -}}
-
 <!-- Add postCount property for each author -->
-{{- range $authors -}}
+{{- range .Pages -}}
 {{- .Scratch.Set "postCount" (len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname)) -}}
 {{- end -}}
 
 <!-- Order by postCount winners -->
-{{- $authors := (.Pages.ByParam "postCount").Reverse -}}
+{{- $paginator := (.Paginate (.Pages.ByParam "postCount").Reverse) -}}
 
 
 <section id="authors">
@@ -38,7 +35,7 @@
   -->
 
   <ul class="authors-list">
-    {{- range $authors -}} 
+    {{- range $paginator.Pages -}} 
     <li>
       <a class="authors-list-item"
          href="{{- .RelPermalink -}}">
@@ -58,5 +55,7 @@
   <p class="authors-footer">If you align with the <a href="/about/all-drops">values described at our about page</a> and feels like collaborating here, please <a href="/contact/all-drops">contact us!</a></p>
 
 </section>
+
+{{- partial "pagination.html" $paginator -}}
 
 {{- end -}}
