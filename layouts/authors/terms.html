@@ -10,11 +10,11 @@
 
 <!-- Order by postCount winners -->
 {{- $paginator := (.Paginate (.Pages.ByParam "postCount").Reverse) -}}
-
+<!-- Use .Data.Terms.ByCount instead? -->
 
 <section id="authors">
   <div class="authors-header">
-    <h1>{{- title .Title -}}</h1>
+    <h1>{{- title .Data.Plural -}}</h1>
   </div>
 
   <!-- "Sort by" menu -->
@@ -52,10 +52,8 @@
     {{- end -}}
   </ul>
 
-  <p class="authors-footer">If you align with the <a href="/about/all-drops">values described at our about page</a> and feels like collaborating here, please <a href="/contact/all-drops">contact us!</a></p>
+{{- partial "pagination.html" $paginator -}}
 
 </section>
-
-{{- partial "pagination.html" $paginator -}}
 
 {{- end -}}

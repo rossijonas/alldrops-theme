@@ -797,7 +797,76 @@ section.article-author {
    *
    */ 
 
-  /* list.html */ 
+  /* author.html */ 
+
+  .author-header {
+    margin: 0 auto;
+    padding: 45px 8%; 
+    border-bottom: 1px solid var(--lightest-grey);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .author-header-content {
+    flex: 2 1 auto;
+    padding-right: 8px;
+  }
+
+  .author-header-bio {
+    color: var(--main-grey); 
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-top: 12px;
+  }
+
+  .author-header-meta {
+    color: var(--main-grey); 
+    font-size: 14px;
+    line-height: 1.2;
+    padding-top: 8px;
+  }
+
+  .author-header-social {
+  }
+
+  .author-header-social:link {
+    color: var(--main-grey); 
+  }
+
+  .author-header-avatar-container {
+    display: flex;
+  }
+
+  .author-header-avatar {
+    border-radius: 50%;
+    max-height: 150px;
+    max-width: auto;
+  }
+
+  .author-posts {
+    padding-top: 25px;
+  }
+
+  @media (max-width: 600px) {
+    .author-header {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .author-header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-right: 0;
+    }
+
+    .author-header-avatar-container {
+      order: -1;
+    }
+  }
+
+  /* terms.html */ 
 
   .authors-header {
     padding: 45px 0; 

@@ -1,0 +1,40 @@
+{{- define "main" -}}
+
+{{- $paginator := .Paginator -}}
+
+<section id="author">
+  <div class="author-header">
+    <div class="author-header-content">
+      <h1>{{- .Params.fullName -}}</h1>
+      <h2 class="author-header-bio">{{- .Params.bio -}}</h2>
+      <p class="author-header-meta">
+        Posts: {{ len .Pages }}
+      </p>
+      <p class="author-header-meta">
+        {{- range $key, $val := .Params.social -}}
+        <span>
+          <a class="author-header-social"
+             href="{{ $val }}"
+             target="_blank">
+           &bull;&nbsp{{ $key }}
+          </a>
+        </span>
+        {{- end -}}
+      </p>
+    </div>
+    <div class="author-header-avatar-container">
+      <img class="author-header-avatar"
+           src="{{- .Params.avatar  -}}"
+           alt="author avatar"/>
+    </div>
+  </div>
+
+  <div class="author-posts">
+
+    {{- partial "note-list.html" $paginator -}}
+    {{- partial "pagination.html" $paginator -}}
+
+  </div>
+</section>
+
+{{- end -}}
