@@ -828,6 +828,8 @@ section.article-author {
   }
 
   .author-header-social {
+    font-size: 12px;
+    padding-right: 8px;
   }
 
   .author-header-social:link {
