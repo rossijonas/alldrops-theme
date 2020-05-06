@@ -1,5 +1,6 @@
 {{- $paginator := . -}}
 {{- $isHome := or (eq (string .URL) "/") (hasPrefix (string .URL) "/page/" ) -}}
+{{- $isAuthors := hasPrefix (string .URL) "/authors/" -}}
 
 {{- if gt $paginator.TotalPages 0 -}}
 {{- $dateFormat := site.Params.dateFormat -}}
@@ -47,7 +48,7 @@
           {{- end -}}
 
           <!-- At home page, add subsection tag -->
-          {{- if and .Parent.Params.subsection $isHome -}}
+          {{- if and .Parent.Params.subsection (or $isHome $isAuthors) -}}
           &nbsp &sol; &nbsp
           {{- partial "section-tag.html" .Parent -}}
           {{- end -}}

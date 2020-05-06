@@ -1,19 +1,14 @@
 {{- define "main" -}}
 
 {{- $page := .Page -}}
-
-<!-- Add postCount property for each author -->
-{{- range .Pages -}}
-{{- .Scratch.Set "postCount" (len (where (where .Site.Pages "Type" "posts") ".Params.author" .Params.nickname)) -}}
-{{- end -}}
+{{- $pages := (.Site.GetPage "/posts").Sections -}}
 
 <!-- Order by postCount winners -->
-{{- $paginator := (.Paginate (.Pages.ByParam "postCount").Reverse) -}}
-<!-- Use .Data.Terms.ByCount instead? -->
+{{- $paginator := .Paginate $pages.ByLength -}}
 
 <section id="authors">
   <div class="authors-header">
-    <h1>{{- title .Data.Plural -}}</h1>
+    <h1>Sections</h1>
   </div>
 
   <ul class="authors-list">
@@ -26,7 +21,7 @@
              alt="author avatar"/>
         <h3>{{- .Params.fullName -}}</h3>
         <p class="authors-list-item-meta">
-          Posts: {{ .Scratch.Get "postCount" }}
+          Posts: {{ len .Pages }}
         </p>
         <p class="authors-list-item-meta">{{- .Params.bio -}}</p>
       </a>

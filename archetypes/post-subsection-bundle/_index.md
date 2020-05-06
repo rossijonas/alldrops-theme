@@ -4,6 +4,7 @@
 
 # | ! DO NOT CHANGE ! | 
 subsection = true
+subsections = "{{ replace .Name `-` ` ` }}"
 # | ! DO NOT CHANGE (end) ! | 
 
 # Section name.

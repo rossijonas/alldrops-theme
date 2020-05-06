@@ -1,19 +1,43 @@
-{{- $nav := . -}}
-{{- if or $nav.showCategories $nav.showTags $nav.custom -}}
+{{- $nav := site.Params.nav -}}
+
+{{- $slug := replace .Site.Title " " "-" | lower -}}
+
+{{- $about := .Site.GetPage (path.Join "/about/" $slug) -}}
+{{- $authors := .Site.GetPage "/authors" -}}
+{{- $sections := .Site.GetPage "/subsections" -}}
+{{- $contact := .Site.GetPage (path.Join "/contact" $slug) -}}
+{{- $subscribe := .Site.GetPage (path.Join "/subscribe" $slug) -}}
+
+{{- $mainNav := slice $about $authors $contact $subscribe }}
+
 <div class="nav-wrap">
   <input id="nav-toggle-collapse" type="checkbox">
   <label for="nav-toggle-collapse" class="nav-toggle-collapse">+</label>
   <nav class="nav">
+
     {{- if $nav.showCategories -}}
     <a class="nav-item" href="{{- `/categories/` | relLangURL -}}">
       {{- T "Categories" -}}
     </a>
     {{- end -}}
+
     {{- if $nav.showTags -}}
     <a class="nav-item" href="{{- `/tags/` | relLangURL -}}">
       {{- T "Tags" -}}
     </a>
     {{- end -}}
+
+    <!-- Main nav items -->
+    {{- range $mainNav -}}
+    {{- with . -}}
+    <a class="nav-item" href="{{ .RelPermalink }}"
+      >
+      {{- .Type | safeHTML | upper -}}
+    </a>
+    {{- end -}}
+    {{- end -}}
+
+     <!-- Custom nav items from site config file -->
     {{- range $nav.custom -}}
     {{- $url := .url | safeURL -}}
     {{- if strings.HasPrefix $url "/" -}}{{- $url = $url | relLangURL -}}{{- end -}}
@@ -25,6 +49,6 @@
       {{- .title | safeHTML | upper -}}
     </a>
     {{- end -}}
+   
   </nav>
 </div>
-{{- end -}}
