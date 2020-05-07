@@ -1,6 +1,5 @@
-{{- $sections := where .Site.Pages ".Params.isSection" "eq" true -}}
+{{- $sections := (.Site.GetPage "/posts").Sections -}}
 
-{{ $sections }}
 {{- with $sections -}}
 <div class="">
   <nav class="sections-navbar">

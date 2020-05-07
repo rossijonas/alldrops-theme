@@ -4,36 +4,47 @@
 {{- end -}}
 
 <section id="header" class="site-header-reduced">
+
   <div class="header-reduced-wrap">
     <span class="header-reduced-left-side">
       <a class="site-home" href="{{- `/` | relLangURL -}}">
-        {{- if .Site.Params.favicon -}}
+
+        {{- if and .Parent.Params.isSection .Site.Params.favicon -}}
         <img
           class="site-favicon"
           src="{{- .Site.Params.favicon | relURL -}}"
           alt="{{- .Site.Title -}}"
           />
+
+        {{- else if and (not .Parent.Params.isSection) .Site.Params.logo -}}
+        <img
+          class="site-favicon"
+          src="{{- .Site.Params.logo | relURL -}}"
+          alt="{{- .Site.Title -}}"
+          />
+        
         {{- else -}}
         <span class="header-reduced-site-name">
           {{- .Site.Title | safeHTML -}}
         </span>
         {{- end -}}
+
       </a>
 
-      {{- if or .Parent.Params.subsection -}}
+      {{- if .Parent.Params.isSection -}}
       <a class="site-home" href="{{- .Parent.RelPermalink -}}">
         <div
-          class="header-reduced-subsection"
+          class="header-reduced-section"
           style="--highlight-color: {{- .Parent.Params.color | safeCSS -}};"
           >
           {{- if .Parent.Params.logo -}}
           <img
-            class="header-reduced-subsection-logo"
+            class="header-reduced-section-logo"
             src="{{- .Parent.Params.logo | relURL -}}"
             alt="{{- .Parent.Params.name -}}"
             />
           {{- else -}}
-          <span class="header-reduced-subsection-name">
+          <span class="header-reduced-section-name">
             {{- .Parent.Params.name | safeHTML -}}
           </span>
           {{- end -}}

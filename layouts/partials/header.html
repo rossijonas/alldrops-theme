@@ -3,6 +3,7 @@
 
     <span class="header-left-side">
       <a class="site-home" href="{{- `/` | relLangURL -}}">
+
         <!-- Add logo or site title -->
         {{- if .Site.Params.logo -}}
         <img
@@ -15,6 +16,7 @@
           {{- .Site.Title | safeHTML -}}
         </span>
         {{- end -}}
+
         <!-- Add slogan -->
         {{- with site.Params.slogan -}}
         <div class="site-slogan">
@@ -23,11 +25,13 @@
           </span>
         </div>
         {{- end -}}
+
       </a>
     </span>
 
     <span class="header-right-side">
       {{- partial "navigation-items.html" . -}}
     </span>
+
   </div>
 </section>

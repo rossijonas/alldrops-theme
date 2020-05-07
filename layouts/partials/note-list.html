@@ -47,15 +47,14 @@
           {{- partial "author-tag.html" . -}}
           {{- end -}}
 
-          <!-- At home page, add subsection tag -->
-          {{- if and .Parent.Params.subsection (or $isHome $isAuthors) -}}
+          <!-- At home page, add section tag -->
+          {{- if and .Parent.Params.isSection (or $isHome $isAuthors) -}}
           &nbsp &sol; &nbsp
           {{- partial "section-tag.html" .Parent -}}
           {{- end -}}
 
         </div>
       </div>
-      {{- $relURL := .RelPermalink -}}
     </a>
   </li>
   {{- end -}}
