@@ -3,47 +3,51 @@
 {{- $justify := false -}}
 {{- if eq .Params.justify true -}} {{- $justify = true -}} {{- end -}}
 
+<!-- Default about page to about site -->
 {{- $title := .Site.Title -}}
 {{- $slogan := .Site.Params.slogan -}}
 {{- $logo := .Site.Params.logo -}}
 {{- $highlightColor := "" -}} 
 
-<!-- Get publication highlight color -->
-{{- if .Params.publications  -}}
-{{- $publication := .Params.publications -}}
-{{- range .Site.Pages -}}
-{{- if eq .Page.Name $publication -}}
-{{- $title = .Page.Params.title -}}
-{{- $slogan = .Page.Params.subtitle -}}
-{{- $logo = .Page.Params.logo -}}
-{{- $highlightColor = .Page.Params.color -}}
-{{- end -}}
-{{- end -}}
+<!-- For an about page belonging to a section -->
+<!-- Get section page -->
+{{- $slug := replace .Params.name " " "-" | lower -}}
+{{- $sectionPage := .Site.GetPage (path.Join "/posts/" $slug) }}
+<!-- Get section data -->
+{{- with $sectionPage -}}
+{{- $title = .Params.name -}}
+{{- $slogan = .Params.slogan -}}
+{{- $logo = .Params.logo -}}
+{{- $highlightColor = .Params.color -}}
 {{- end -}}
 
 <div
-  class="article-container about-container"
+  class="about-page-container"
   style="--highlight-color:{{- $highlightColor -}};"
   >
-  <div class="about-header">
+  <div class="about-page-header">
     <img
       class="about-page-logo"
       src="{{- $logo -}}"
       alt="{{- $title -}} logo"/>
     {{- with .Params.showTitle -}}
-    <h1 class="about title">
+    <h1 class="about-page-title">
       {{- $title -}}
     </h1>
-    {{- end -}}
-    <h2 class="about subtitle">{{- $slogan -}}</h2>
+  {{- end -}}
+  <h2 class="about-page-subtitle">{{- $slogan -}}</h2>
   </div>
-  <article
-    class="about article markdown-body"
-    {{- if $justify -}}
-    style="text-align: justify;"
-    {{- end -}}>
-    {{- .Content -}}
-  </article>
-  {{- partial "article-author.html" . -}}
+  <div class="about-page-content">
+    <article
+      class="about article markdown-body"
+      {{- if $justify -}}
+      style="text-align: justify;"
+      {{- end -}}>
+      {{- .Content -}}
+    </article>
+    <div class="about-page-author">
+      {{- partial "article-author.html" . -}}
+    </div>
+  </div>
 </div>
 {{- end -}}

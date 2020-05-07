@@ -749,10 +749,6 @@ h2.article.subtitle,
   background-color: rgba(0,0,0,0);
 }
 
-.about.subtitle {
-  letter-spacing: 1.7px;
-}
-
 .pagination ul li a {
   color: var(--highlight-color, var(--light-grey));
 }
@@ -791,6 +787,75 @@ section.article-author {
 
   /* single.html */ 
 
+  .about.subtitle {
+    letter-spacing: 1.7px;
+  }
+
+  .about-page-container {
+    padding: 20px;
+  }
+
+  .about-page-header {
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-page-content {
+    border-left: 10px solid var(--highlight-color, var(--highlight-grey));
+    border-right: 10px solid var(--highlight-color, var(--highlight-grey));
+    padding: 0 15% 15px 15%;
+    margin-top: 40px;
+  }
+
+  .about-page-logo,
+  .about-page-title,
+  .about-page-subtitle {
+    padding: 20px 0 20px 0;
+  }
+
+  .about-page-logo {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .about-page-title,
+  .about-page-subtitle {
+    text-align: center;
+  }
+
+  .about-page-title {
+    font-size: 3rem;
+  }
+
+  .about-page-subtitle {
+    color: var(--main-grey);
+    font-weight: 400;
+  }
+
+  .about-page-author {
+    padding-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    .about-page-header {
+      width: 100%;
+      padding: 10px 0 10px 0;
+    }
+
+    .about-page-content {
+      border-left: 8px solid var(--highlight-color, var(--highlight-grey));
+      border-right: 8px solid var(--highlight-color, var(--highlight-grey));
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
 
   /*
    * FOLDER: layout/authors/
@@ -1116,6 +1181,7 @@ section.article-author {
 
     .site-favicon {
       height: 100%;
+      max-height: 32px;
     }
 
     .header-reduced-left-side {
@@ -1300,6 +1366,16 @@ section.article-author {
     padding-top: 6px;
   }
 
+  @media (max-width: 800px) {
+    .author-card {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .author-card-content {
+      text-align: center;
+    }
+  }
+
   /* author-tag.html, section-tag.html */
 
   .author-tag,
@@ -1429,37 +1505,6 @@ section.article-author {
     color: var(--dark-grey); 
   }
 
-  .about-container {
-    border-left: 10px solid var(--highlight-color, var(--highlight-grey));
-    border-right: 10px solid var(--highlight-color, var(--highlight-grey));
-    padding-left: 15%;
-    padding-right: 15%;
-    margin-top: 40px;
-  }
-
-  .about-page-logo,
-  .about.title,
-  .about.subtitle,
-  .about.article {
-    padding-bottom: 40px;
-  }
-
-  .about-page-logo {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .about.title,
-  .about.subtitle {
-    text-align: center;
-  }
-
-  .about.title {
-    font-size: 3rem;
-  }
-
   @media (max-width: 800px) {
     h1 {
       font-size: 26px;
@@ -1470,14 +1515,5 @@ section.article-author {
 
     section.article-author {
       max-width: 90%;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .about-container {
-      border-left: 8px solid var(--highlight-color, var(--highlight-grey));
-      border-right: 8px solid var(--highlight-color, var(--highlight-grey));
-      padding-left: 8%;
-      padding-right: 8%;
     }
   }

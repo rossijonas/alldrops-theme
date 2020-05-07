@@ -9,6 +9,7 @@ showName = false
 # `author` field requires the `ninckname` of the author creating the
 # current page.
 author = {{ .Site.Author.name | default "" }}
+authors = {{ .Site.Author.name | default "" }}
 draft = true
 
 +++

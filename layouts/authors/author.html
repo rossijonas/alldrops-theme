@@ -8,7 +8,7 @@
       <h1>{{- .Params.fullName -}}</h1>
       <h2 class="author-header-bio">{{- .Params.bio -}}</h2>
       <p class="author-header-meta">
-        <i>{{ len .Pages }} posts written.</i>
+        <i>{{ len (where .Pages "Type" "posts") }} posts written.</i>
       </p>
       <p class="author-header-meta">
         <span>
