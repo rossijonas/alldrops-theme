@@ -1,0 +1,16 @@
+{{- $sections := where .Site.Pages ".Params.isSection" "eq" true -}}
+
+{{ $sections }}
+{{- with $sections -}}
+<div class="">
+  <nav class="sections-navbar">
+    {{- range . -}}
+    <a
+      class="sections-navbar-item"
+      href="{{- .Permalink -}}">
+      {{- .Params.name | safeHTML | upper -}}
+    </a>
+    {{- end -}}
+  </nav>
+</div>
+{{- end -}}

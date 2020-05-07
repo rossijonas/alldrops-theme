@@ -5,12 +5,12 @@
     <div class="base-body">
       {{- if .IsHome -}}
       {{- partial "header.html" . -}}
-      {{- partial "subsections-navbar.html" . -}}
+      {{- partial "sections-navbar.html" . -}}
       {{- else -}}
       {{- partial "header-reduced.html" . -}}
-      <!-- Add subsection header if it's a subsection home page -->
-      {{- if .Params.subsection -}}
-      {{- partial "subsection-header.html" . -}}
+      <!-- Add section header if it's a section home page -->
+      {{- if .Params.isSection -}}
+      {{- partial "section-header.html" . -}}
       {{- end -}}
 
       {{- end -}}

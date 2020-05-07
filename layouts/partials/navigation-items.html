@@ -4,11 +4,11 @@
 
 {{- $about := .Site.GetPage (path.Join "/about/" $slug) -}}
 {{- $authors := .Site.GetPage "/authors" -}}
-{{- $sections := .Site.GetPage "/subsections" -}}
-{{- $contact := .Site.GetPage (path.Join "/contact" $slug) -}}
-{{- $subscribe := .Site.GetPage (path.Join "/subscribe" $slug) -}}
+{{- $sections := .Site.GetPage "/sections" -}}
+{{- $contact := .Site.GetPage (path.Join "/contact/" $slug) -}}
+{{- $subscribe := .Site.GetPage (path.Join "/subscribe/" $slug) -}}
 
-{{- $mainNav := slice $about $authors $contact $subscribe }}
+{{- $mainNav := slice $about $sections $authors $contact $subscribe }}
 
 <div class="nav-wrap">
   <input id="nav-toggle-collapse" type="checkbox">

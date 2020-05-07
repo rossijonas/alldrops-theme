@@ -1,13 +1,8 @@
 +++
+
 # | ! DO NOT CHANGE ! | 
-# 
-# The `nickname` param is the unique ID that identifies the author. Please
-# NEVER CHANGE the `nickname` param below.
-# 
-# Be aware that changing the `nickname` param below, after having some
-# content already created for this site, will require to manually replace
-# the user nickname at `author` param on every content already created by
-# the user (posts, about pages, site config, etc).
+# `nickname` param is the unique ID that identifies the author, and
+# connects the author with it's content creations.
 nickname = "{{ .Name }}"
 date = {{ .Date }}
 #

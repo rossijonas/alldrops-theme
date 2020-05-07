@@ -4,20 +4,20 @@
 {{- end -}}
 
 <section
-  class="subsection-header"
+  class="section-header"
   style="--highlight-color: {{- .Params.color | safeCSS -}};">
     {{- if .Params.logo -}}
     <img
-      class="subsection-header-logo"  
+      class="section-header-logo"  
       src="{{- .Params.logo -}}"
       alt="{{- $title -}}"/>
     {{- end -}}
-    <div class="subsection-header-description">
-      <h1 class="subsection-header-title">
+    <div class="section-header-description">
+      <h1 class="section-header-title">
         {{- .Params.name | safeHTML -}}
       </h1>
   {{- with .Params.slogan -}}
-    <span class="subsection-header-subtitle">
+    <span class="section-header-subtitle">
       {{- . | safeHTML -}}
     </span>
   {{- end -}}
