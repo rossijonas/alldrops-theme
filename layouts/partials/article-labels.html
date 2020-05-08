@@ -1,13 +1,13 @@
 {{- if or .Params.categories .Params.tags -}}
-<section class="article labels">
-  <p class="label">
+<section class="article-labels">
+  <p>
     categories:&nbsp
     {{- range .Params.categories -}}
     {{- $url := print "/categories/" (. | urlize) "/" -}}
     <a class="category" href={{- $url | relLangURL -}}>{{- . -}}</a>
     {{- end -}}
   </p>
-  <p class="label">
+  <p>
     tags:&nbsp
     {{- range .Params.tags -}}
     {{- $url := print "/tags/" (. | urlize) "/" -}}

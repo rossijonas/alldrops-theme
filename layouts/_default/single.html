@@ -5,14 +5,9 @@
 
 {{- $highlightColor := "" -}} 
 
-<!-- Get publication highlight color -->
-{{- if .Params.publications  -}}
-{{- $publication := .Params.publications -}}
-{{- range .Site.Pages -}}
-{{- if eq .Page.Name $publication -}}
-{{- $highlightColor = .Page.Params.color}}
-{{- end -}}
-{{- end -}}
+<!-- Get section highlight color -->
+{{- if .Parent.Params.isSection  -}}
+{{- $highlightColor = .Parent.Params.color}}
 {{- end -}}
 
 <div
@@ -30,9 +25,9 @@
     {{- end -}}
     {{- .Content -}}
   </article>
+  {{- partial "article-author.html" . -}}
   {{- partial "article-labels.html" . -}}
   {{- partial "article-license.html" . -}}
-  {{- partial "article-author.html" . -}}
 </div>
 
 <!-- Disable article navigation...
