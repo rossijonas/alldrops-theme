@@ -1,0 +1,77 @@
+{{- $page := . -}}
+
+{{- $dateFormat := site.Params.dateFormat -}}
+{{- if not $dateFormat -}}{{- $dateFormat = "Jan 2, 2006" -}}{{- end -}}
+
+<!-- Default related articles for any post. -->
+{{- $relPosts := .Site.RegularPages -}}
+<!-- Default related title is site title. -->
+{{- $relTitle := .Site.Title -}}
+<!-- Show section meta -->
+{{- $sectionMeta := true -}}
+
+<!-- If post belongs to a section, and section has more than 1 post 
+  related posts belongs to same section and related title is section's
+  name. -->
+  {{- if .Parent.Params.isSection -}}
+  {{- $slug := replace .Parent.Params.name " " "-" }}
+  {{- $sectionPosts := (.Site.GetPage (path.Join "/posts/" $slug)).Pages -}}
+  {{- if gt (len $sectionPosts) 1 -}}
+  {{- $relPosts = $sectionPosts -}}
+  {{- $relTitle = .Parent.Params.name -}}
+  {{- $sectionMeta = false -}}
+  {{- end -}}
+  {{- end -}}
+
+  <!-- Give only first 3 related posts. -->
+  {{- $relPosts = where $relPosts "Type" "posts" -}}
+  {{- $relPosts = first 3 (where $relPosts ".Title" "ne" $page.Title) -}}
+
+  <section class="article-related">
+    <p class="article-related-label">Read more on {{$relTitle}}:</p>
+    <ul class="note-list">
+      {{- range $relPosts -}}
+      <li class="note-item">
+        <a class="note-item-container" href="{{- .RelPermalink -}}">
+          {{- if .Params.image -}}
+          <div class="note-item-post-cover">
+            <img src="{{.Params.image}}" alt="post cover">{{- end -}}
+          </div>
+          <div class="note-item-content">
+            <p class="note-title">{{- .Title | safeHTML -}}</p>
+            {{- if .Params.subtitle -}}
+            <p class="note-subtitle">
+              {{- .Params.subtitle | safeHTML -}}
+            </p>
+            {{- end -}}
+
+            <!-- Add date/reading time -->
+            {{- if .Date -}}
+            <p class="note-meta">
+              {{- .Date.Format $dateFormat -}}
+              {{- if .ReadingTime -}}
+              &nbsp &bull; &nbsp
+              {{- .ReadingTime -}}&nbsp min read
+              {{- end -}}
+            </p>
+            {{- end -}}
+
+            <!-- Add author tag -->
+            <div class="note-meta">
+              {{- if .Params.author -}}
+              {{- partial "author-tag.html" . -}}
+              {{- end -}}
+
+              <!-- At home page, add section tag -->
+              {{- if and .Parent.Params.isSection $sectionMeta -}}
+              &nbsp &sol; &nbsp
+              {{- partial "section-tag.html" .Parent -}}
+              {{- end -}}
+
+            </div>
+          </div>
+        </a>
+      </li>
+      {{- end -}}
+    </ul>
+  </section>

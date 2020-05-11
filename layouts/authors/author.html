@@ -1,6 +1,6 @@
 {{- define "main" -}}
 
-{{- $paginator := .Paginator -}}
+{{- $paginator := .Paginate (where .Pages "Type" "posts") -}}
 
 <section id="author">
   <div class="author-header">
