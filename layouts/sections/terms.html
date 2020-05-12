@@ -3,33 +3,36 @@
 {{- $page := .Page -}}
 {{- $pages := (.Site.GetPage "/posts").Sections -}}
 
-<!-- Order by postCount winners -->
+<!-- Order by number of posts -->
 {{- $paginator := .Paginate $pages.ByLength -}}
 
-<section id="authors">
-  <div class="authors-header">
+<section id="sections">
+  <div class="sections-header">
     <h1>Sections</h1>
   </div>
 
-  <ul class="authors-list">
+  <ul class="sections-list">
     {{- range $paginator.Pages -}} 
     <li>
-      <a class="authors-list-item"
+      <a class="sections-list-item"
          href="{{- .RelPermalink -}}">
-        <img class="authors-list-item-avatar"
-             src="{{- .Params.avatar  -}}"
-             alt="author avatar"/>
-        <h3>{{- .Params.fullName -}}</h3>
-        <p class="authors-list-item-meta">
-          Posts: {{ len .Pages }}
-        </p>
-        <p class="authors-list-item-meta">{{- .Params.bio -}}</p>
+        <img class="sections-list-item-logo"
+             src="{{- .Params.logo  -}}"
+             alt="section logo"/>
+        <div class="sections-list-item-content"
+             style="--highlight-color: {{- .Params.color | safeCSS -}};">
+          <h3>{{- .Params.name -}}</h3>
+          <p class="sections-list-item-slogan">{{- .Params.slogan -}}</p>
+          <p class="sections-list-item-meta">
+            Posts: {{ len .Pages }}
+          </p>
+        </div>
       </a>
     </li>
     {{- end -}}
   </ul>
 
-{{- partial "pagination.html" $paginator -}}
+  {{- partial "pagination.html" $paginator -}}
 
 </section>
 
