@@ -15,16 +15,16 @@
     {{- range $paginator.Pages -}} 
     <li>
       <a class="sections-list-item"
+         style="--highlight-color: {{- .Params.color | safeCSS -}};"
          href="{{- .RelPermalink -}}">
         <img class="sections-list-item-logo"
              src="{{- .Params.logo  -}}"
              alt="section logo"/>
-        <div class="sections-list-item-content"
-             style="--highlight-color: {{- .Params.color | safeCSS -}};">
+        <div class="sections-list-item-content">
           <h3>{{- .Params.name -}}</h3>
           <p class="sections-list-item-slogan">{{- .Params.slogan -}}</p>
           <p class="sections-list-item-meta">
-            Posts: {{ len .Pages }}
+            <i>{{ len .Pages }} posts</i>
           </p>
         </div>
       </a>

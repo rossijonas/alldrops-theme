@@ -212,6 +212,7 @@ acronym {
   display: block;
   margin: -1px auto;
   max-width: 1032px;
+  min-height: 100vh;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   overflow: hidden;
@@ -622,6 +623,67 @@ acronym {
   }
 }
 
+/* taxonomy.html, terms.html */
+
+.taxonomy-page-header {
+  padding: 45px 0; 
+  border-bottom: 1px solid var(--lightest-grey);
+}
+
+.taxonomy-page-content {
+  padding-top: 20px;
+}
+
+.taxonomy-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.taxonomy-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.taxonomy-list-item {
+  padding: 24px;
+}
+
+.taxonomy-list-item:link {
+  text-decoration: none;
+}
+
+.taxonomy-list-item:hover {
+  opacity: 0.5;
+}
+
+.taxonomy-page-tag,
+.taxonomy-page-item-tag {
+  background-color: rgba(0,0,0,0.05);
+  color: var(--main-grey);
+  line-height: 1;
+  margin: 8px 8px 8px 5px;
+  padding: 10px;
+  border-radius: 5px;
+  word-break: normal;
+  word-wrap: none;
+  hyphens: none;
+  -moz-hyphens: none;
+}
+
+.taxonomy-page-item-tag {
+  display: block;
+}
+
+.taxonomy-list-item-meta {
+  color: var(--main-grey);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+
 /*
  * FOLDER: layout/authors/
  *
@@ -848,6 +910,8 @@ acronym {
   display: block;
   padding: 12px;
   margin: 0 auto;
+  border-left: 10px solid var(--highlight-color, var(--highlight-grey));
+  padding-left: 20px;
 }
 
 .sections-list-item:link {
@@ -861,11 +925,6 @@ acronym {
 .sections-list-item-logo {
   max-height: 150px;
   max-width: auto;
-}
-
-.sections-list-item-content {
-  border-left: 10px solid var(--highlight-color, var(--highlight-grey));
-  padding-left: 20px;
 }
 
 .sections-list-item-slogan,
