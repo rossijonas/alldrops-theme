@@ -14,8 +14,8 @@ title = "{{ replace .Name `-` ` ` | replaceRE `\d+ \d+ \d+_` `` | title }}"
 subtitle = ""
 # `author` and `authors` fields requires the `ninckname` of the author
 # creating the current page.
-author = {{ .Site.Author.name | default "" }}
-authors = {{ .Site.Author.name | default "" }}
+author = "{{ .Site.Author.name | default "" }}"
+authors = "{{ .Site.Author.name | default "" }}"
 description = ""
 categories = []
 tags = []

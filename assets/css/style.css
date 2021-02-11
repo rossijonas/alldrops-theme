@@ -8,7 +8,7 @@
   --light-grey: rgba(0,0,0,0.40);
   --lightest-grey: rgba(0,0,0,0.10);
   --highlight-grey: rgba(0,0,0,0.24);
-  --dark-grey: rgba(0,0,0,0.70);
+  --dark-grey: rgba(0,0,0,0.90);
 }
 
 html {
@@ -336,6 +336,15 @@ acronym {
 
 /* Markdown */
 
+code {
+  color: var(--dark-grey);
+  background: var(--lightest-grey);
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 2px;
+
+}
+
 .article.markdown-body h1,
 .article.markdown-body h2,
 .article.markdown-body h3,
@@ -535,6 +544,8 @@ acronym {
 /* single.html */ 
 
 .article-container {
+  max-width: 728px;
+  margin: 0 auto;
   border-radius: 0;
   box-shadow: none;
   padding: 20px;
@@ -945,6 +956,10 @@ acronym {
     margin-top: 45px;
     padding: 20px 16% 30px 16%;
 
+  }
+
+  .sections-list li {
+    margin-bottom: 15px;
   }
 
   .sections-list-item {
