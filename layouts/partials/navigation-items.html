@@ -15,6 +15,16 @@
   <label for="nav-toggle-collapse" class="nav-toggle-collapse">+</label>
   <nav class="nav">
 
+    <!-- Main nav items -->
+    {{- range $mainNav -}}
+    {{- with . -}}
+    <a class="nav-item" href="{{ .RelPermalink }}"
+      >
+      {{- .Type | safeHTML | upper -}}
+    </a>
+    {{- end -}}
+    {{- end -}}
+
     {{- if $nav.showCategories -}}
     <a class="nav-item" href="{{- `/categories/` | relLangURL -}}">
       {{- T "Categories" | lower -}}
@@ -28,16 +38,6 @@
     {{- end -}}
 
     <span>&nbsp&nbsp</span>
-
-    <!-- Main nav items -->
-    {{- range $mainNav -}}
-    {{- with . -}}
-    <a class="nav-item" href="{{ .RelPermalink }}"
-      >
-      {{- .Type | safeHTML | upper -}}
-    </a>
-    {{- end -}}
-    {{- end -}}
 
      <!-- Custom nav items from site config file -->
     {{- range $nav.custom -}}

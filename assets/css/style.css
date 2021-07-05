@@ -362,6 +362,10 @@ code {
   border-bottom: 1px solid #e6e6e6;
 }
 
+.article.markdown-body a {
+  text-decoration: underline;
+}
+
 .article.markdown-body img {
   -ms-transform: scale(1);
   -ms-transition: transform 0.25s ease-in-out 0s;
@@ -1254,7 +1258,7 @@ code {
 }
 
 .note-title {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   margin: 5px 0;
 }
@@ -1288,7 +1292,6 @@ code {
   .note-list,
   margin-left: -20px;
   margin-right: -20px;
-}
 }
 
 /* article-header.html, article-labels.html, article-license.html
@@ -1470,7 +1473,7 @@ article-comments.html */
   margin-bottom: 25px;
   padding: 45px 0 45px 0;
   min-height: 150px;
-  border-bottom: 1px solid var(--lightest-grey);
+ /*border-bottom: 1px solid var(--lightest-grey);*/
 }
 
 .section-header-logo,
