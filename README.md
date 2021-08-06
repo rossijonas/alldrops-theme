@@ -20,23 +20,23 @@ This [Hugo](https://gohugo.io) theme is a fork from [hugo-notepadium](https://gi
 
 ### Home Page
 
-![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr01.png))]
+![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr01.png)
 
 ### Section Page
 
-![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr02.png))]
+![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr02.png)
 
 ### Article
 
-![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr03.png))]
+![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr03.png)
 
 ### Author Page
 
-![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr04.png))]
+![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr04.png)
 
 ### Authors Page
 
-![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr05.png))]
+![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr05.png)
 
 ### Sections Page
 
