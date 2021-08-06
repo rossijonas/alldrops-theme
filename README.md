@@ -4,9 +4,9 @@ _(Request Hugo Version: [0.60.0+](https://github.com/gohugoio/hugo/releases/))_
 
 ## Features
 
-This [Hugo](https://gohugo.io) theme is a fork from [hugo-notepadium](https://github.com/cntrump/hugo-notepadium) containinig most of it's features, and focused at:
+This [Hugo](https://gohugo.io) theme was previously a fork from [hugo-notepadium](https://github.com/cntrump/hugo-notepadium) containing most of it's features, but rewritten to achieve:
 
-- Looking somewhat familiar to [Medium.com](https://medium.com/).
+- Look somewhat familiar to [Medium.com](https://medium.com/).
 
 - Multi-sections support (like [Medium.com 'publications'](https://help.medium.com/hc/en-us/articles/115004681607)).
 
@@ -15,6 +15,8 @@ This [Hugo](https://gohugo.io) theme is a fork from [hugo-notepadium](https://gi
 - Privacy.
 
 - Less-to-zero JavaScript.
+
+_(Attention: [hugo-notepadium](https://github.com/cntrump/hugo-notepadium) was a starting point and keeping up to date with it is not a goal of this project.)_
 
 ## Screenshots
 
