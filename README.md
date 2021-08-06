@@ -14,7 +14,7 @@ This [Hugo](https://gohugo.io) theme was previously a fork from [hugo-notepadium
 
 - Privacy.
 
-- Less-to-zero JavaScript.
+- Less-to-zero JavaScript delivered to the user's browser.
 
 _(Attention: [hugo-notepadium](https://github.com/cntrump/hugo-notepadium) was a starting point and keeping up to date with it is not a goal of this project.)_
 
