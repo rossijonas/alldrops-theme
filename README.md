@@ -40,6 +40,8 @@ This [Hugo](https://gohugo.io) theme is a fork from [hugo-notepadium](https://gi
 
 ### Sections Page
 
+![](https://raw.githubusercontent.com/alldropsinfo/alldrops-theme/master/images/scr06.png)
+
 ## License
 
 **This theme purpose is to serve my personal Blog [alldrops.info](https://alldrops.info) and no License was apllied yet.**
