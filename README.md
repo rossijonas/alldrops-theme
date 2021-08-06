@@ -46,9 +46,9 @@ _(Attention: [hugo-notepadium](https://github.com/cntrump/hugo-notepadium) was a
 
 ## License
 
-**This theme purpose is to serve my personal Blog [alldrops.info](https://alldrops.info) and no License was apllied yet.**
+**This theme purpose is to serve my personal Blog [alldrops.info](https://alldrops.info) and no License was applied yet.**
 
-**I am willing to aplly any of the free licenses to this theme, but I never came to the point of researching and deliberating about it. Let me know if you would like to use this theme and has a license of choice.**
+**I am willing to apply any of the free licenses to this theme, but I never came to the point of researching and deliberating about it. Let me know if you would like to use this theme and has a license of choice.**
 
 **If you are interested in helping this project to become an open source and documented theme available at the official Hugo themes section ([themes.hugo.io](https://themes.gohugo.io/)) please contact me.**
 
