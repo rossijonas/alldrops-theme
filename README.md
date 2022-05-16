@@ -1,8 +1,6 @@
-# alldrops-theme
+<h1 align="center">alldrops-theme</h1>
 
-_(Request Hugo Version: [0.60.0+](https://github.com/gohugoio/hugo/releases/))_
-
-## Features
+_(Requires Hugo Version: [0.60.0+](https://github.com/gohugoio/hugo/releases/))_
 
 This [Hugo](https://gohugo.io) theme was previously a fork from [hugo-notepadium](https://github.com/cntrump/hugo-notepadium) containing most of it's features, but rewritten to achieve:
 
