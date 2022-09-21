@@ -163,6 +163,11 @@ a:link {
   color: black;
 }
 
+a.nav-item:link {
+  color: var(--dark-grey);
+  font-weight: bold;
+}
+
 a:hover {
   text-decoration: underline;
 }

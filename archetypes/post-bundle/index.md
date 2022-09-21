@@ -3,7 +3,7 @@
 # | ! DO NOT CHANGE ! | 
 {{ $dir := index (findRE "/posts/.*" .Dir) 0 }}
 date = {{ .Date }}
-lastmod = {{ .GitInfo.AuthorDate }}
+lastmod = {{ .Date }}
 #
 # | ! DO NOT CHANGE (end) ! | 
 
